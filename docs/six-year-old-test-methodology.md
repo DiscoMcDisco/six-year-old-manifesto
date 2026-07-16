@@ -49,6 +49,8 @@ Confidence is displayed separately and does not silently reduce or inflate a sco
 
 Unknown values remain unknown.
 
+Proxy dimensions may contribute to a calibration index, but they cannot independently satisfy an official pass condition.
+
 ## Evidence rules
 
 Every evidence item records:

@@ -189,7 +189,7 @@
       "population": "global population"
     },
     {
-      "label": "Receives education in a language understood",
+      "label": "Estimated access to education in a language understood",
       "value": 60,
       "unit": "percent",
       "metricId": "education_language_alignment",
@@ -230,6 +230,8 @@
     "weights": "provisional",
     "passThresholds": "draft",
     "quarterlyAutomation": "not_implemented",
-    "publicationApprovalRequired": true
+    "publicationApprovalRequired": true,
+    "proxyDimensionsMayContributeToCalibration": true,
+    "proxyDimensionsMaySatisfyOfficialPass": false
   }
 }
