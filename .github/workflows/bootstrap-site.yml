@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - site.zip.b64
+      - site.ready
   workflow_dispatch:
 
 permissions:
@@ -18,16 +18,16 @@ jobs:
       - name: Unpack prepared site
         shell: bash
         run: |
-          if [ ! -f site.zip.b64 ]; then
-            echo "No bootstrap bundle present; nothing to do."
+          if [ ! -f site.ready ]; then
+            echo "No bootstrap marker present; nothing to do."
             exit 0
           fi
-          base64 --decode site.zip.b64 > site.zip
+          cat site.zip.b64.part* | base64 --decode > site.zip
           rm -rf .bootstrap-site
           mkdir .bootstrap-site
           unzip -q site.zip -d .bootstrap-site
           cp -R .bootstrap-site/six-year-old-manifesto/. .
-          rm -rf .bootstrap-site site.zip site.zip.b64
+          rm -rf .bootstrap-site site.zip site.ready site.zip.b64.part*
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
