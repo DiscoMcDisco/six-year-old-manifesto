@@ -1,0 +1,36 @@
+name: Finalise Official Run 1 Homepage
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - finalise-homepage.ready
+
+permissions:
+  contents: write
+
+jobs:
+  finalise:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace stale Run 0 homepage status
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('index.html')
+          text = path.read_text()
+          old = '<p class="test-run-status"><span></span> Calibration Run 0 available · safe research completed 16 Jul 2026</p>'
+          new = '<p class="test-run-status"><span></span> Official Run 1 available · research completed 16 Jul 2026 · next run eligible 16 Oct 2026</p>'
+          if old not in text:
+              raise RuntimeError('Stale homepage status text not found')
+          path.write_text(text.replace(old, new))
+          PY
+          rm -f finalise-homepage.ready
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html finalise-homepage.ready
+          git commit -m "Show Official Run 1 on the homepage"
+          git push
