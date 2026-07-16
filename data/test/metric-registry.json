@@ -1,6 +1,6 @@
 {
-  "version": "0.1.0",
-  "status": "calibration",
+  "version": "1.0.0",
+  "status": "official",
   "title": "Six-Year-Old Test Metric Registry",
   "principle": "The AI researches. The code measures.",
   "scoring": {
@@ -21,13 +21,13 @@
       "safety_and_rights",
       "agency_and_participation"
     ],
-    "passRuleStatus": "draft",
+    "passRuleStatus": "official_v1",
     "passRule": {
       "allScoredDimensionsAtLeast": 80,
       "allCriticalDimensionsScored": true,
       "safeChildAppropriateAiGate": "pass"
     },
-    "proxyDimensionsMayContributeToCalibration": true,
+    "proxyDimensionsMayContributeToCurrentIndex": true,
     "proxyDimensionsMaySatisfyOfficialPass": false
   },
   "dimensions": [
@@ -119,8 +119,8 @@
       "metrics": [
         {
           "id": "education_language_alignment",
-          "label": "Access to education in a language understood",
-          "role": "scored",
+          "label": "Estimated access to education in a language understood",
+          "role": "scored_proxy",
           "unit": "percent",
           "direction": "higher_is_better",
           "population": "global learners/population estimate",
@@ -143,7 +143,7 @@
           "preferredSources": [
             "future controlled benchmark"
           ],
-          "refreshCadence": "quarterly",
+          "refreshCadence": "scheduled",
           "staleAfterMonths": 6,
           "caveat": "Interface-language availability is not evidence of equal reasoning, speech or local-context quality."
         }
@@ -343,6 +343,11 @@
     "official AI provider documentation",
     "peer-reviewed primary research where no public statistical authority exists"
   ],
+  "runCounting": {
+    "initialOfficialRun": 1,
+    "minimumBoundaryDays": 90,
+    "incrementRule": "Increment totalRuns exactly once when a new eligible research result is validated and approved as the safe published result."
+  },
   "rejectedPractices": [
     "Treating network coverage as equivalent to meaningful access",
     "Combining differently defined populations into a fake cohort funnel",
