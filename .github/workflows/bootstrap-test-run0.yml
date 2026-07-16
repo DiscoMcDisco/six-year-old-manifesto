@@ -1,0 +1,32 @@
+name: Bootstrap Test Run 0
+
+on:
+  push:
+    branches:
+      - agent/six-year-old-test-run-0
+    paths:
+      - site.ready
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish calibration dashboard
+        shell: bash
+        run: |
+          cat site.zip.b64.part* | base64 --decode > site.zip
+          rm -rf .bootstrap
+          mkdir .bootstrap
+          unzip -q site.zip -d .bootstrap
+          cp -R .bootstrap/manifesto-run0/. .
+          rm -rf .bootstrap site.zip site.ready site.zip.b64.part*
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Build Six-Year-Old Test calibration dashboard"
+          git push
