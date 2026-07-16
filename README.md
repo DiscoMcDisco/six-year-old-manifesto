@@ -6,9 +6,14 @@ This repository contains the public-facing single-page manifesto, its evidence l
 
 ## Project structure
 
-- `index.html` - page content and metadata
-- `styles/manifesto.css` - visual design and responsive layout
-- `scripts/manifesto.js` - reveal animation and sharing behaviour
+- `index.html` - Manifesto landing page and metadata
+- `test.html` - Six-Year-Old Test official results dashboard
+- `styles/manifesto.css` - shared visual design and responsive layout
+- `styles/test.css` - infographic dashboard design
+- `scripts/manifesto.js` - landing-page reveal animation and sharing behaviour
+- `scripts/test.js` - deterministic dashboard rendering from static JSON
+- `data/test/` - metric registry, evidence ledger, current official result and scheduled research payload schema
+- `docs/six-year-old-test-methodology.md` - scoring, evidence and cost-control rules
 - `vercel.json` - static hosting configuration
 
 ## Local preview
@@ -21,4 +26,4 @@ The site is designed for zero-build static deployment on Vercel. The production 
 
 ## Current status
 
-Version 0.1, dated 16 July 2026. The evidence ledger is a dated snapshot and should be periodically reviewed.
+Version 1.0, dated 16 July 2026. Official Run 1 of the Six-Year-Old Test is published with a 90-day minimum boundary before the next eligible run.

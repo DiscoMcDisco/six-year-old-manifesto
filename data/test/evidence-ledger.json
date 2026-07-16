@@ -1,0 +1,263 @@
+{
+  "version": "1.0.0",
+  "runId": "run-1-2026-07-16",
+  "runNumber": 1,
+  "safeResearchCompleted": "2026-07-16",
+  "sourcesCutoff": "2026-07-16",
+  "entries": [
+    {
+      "metricId": "internet_use_global",
+      "value": 74,
+      "unit": "percent",
+      "observationYear": 2025,
+      "publishedYear": 2025,
+      "organisation": "International Telecommunication Union",
+      "title": "Facts and Figures 2025: Internet use",
+      "url": "https://www.itu.int/itu-d/reports/statistics/2025/10/15/ff25-internet-use/",
+      "measurementType": "direct_global_estimate",
+      "confidence": "high",
+      "claim": "74 per cent of the world's population were online in 2025."
+    },
+    {
+      "metricId": "internet_use_rural",
+      "value": 58,
+      "unit": "percent",
+      "observationYear": 2025,
+      "publishedYear": 2025,
+      "organisation": "International Telecommunication Union",
+      "title": "Facts and Figures 2025: Internet use in urban and rural areas",
+      "url": "https://www.itu.int/itu-d/reports/statistics/2025/10/15/ff25-internet-use-in-urban-and-rural-areas/",
+      "measurementType": "direct_global_estimate",
+      "confidence": "high",
+      "claim": "58 per cent of rural dwellers used the internet, compared with 85 per cent of urban dwellers."
+    },
+    {
+      "metricId": "mobile_phone_ownership_10_plus",
+      "value": 82,
+      "unit": "percent",
+      "observationYear": 2025,
+      "publishedYear": 2025,
+      "organisation": "International Telecommunication Union",
+      "title": "Facts and Figures 2025: Mobile phone ownership",
+      "url": "https://www.itu.int/itu-d/reports/statistics/2025/10/15/ff25-mobile-phone-ownership/",
+      "measurementType": "direct_global_estimate",
+      "confidence": "high",
+      "claim": "82 per cent of individuals aged 10 years or older owned a mobile phone."
+    },
+    {
+      "metricId": "mobile_broadband_coverage",
+      "value": 96,
+      "unit": "percent",
+      "observationYear": 2025,
+      "publishedYear": 2025,
+      "organisation": "International Telecommunication Union",
+      "title": "Facts and Figures 2025",
+      "url": "https://www.itu.int/itu-d/reports/statistics/facts-figures-2025/",
+      "measurementType": "direct_global_estimate",
+      "confidence": "high",
+      "claim": "More than 96 per cent of the global population was covered by a mobile broadband network.",
+      "caveat": "Coverage does not prove use, affordability, suitable hardware or skills."
+    },
+    {
+      "metricId": "mobile_broadband_affordable_economies",
+      "value": 63.4,
+      "unit": "percent_of_economies",
+      "numerator": 130,
+      "denominator": 205,
+      "observationYear": 2025,
+      "publishedYear": 2025,
+      "organisation": "International Telecommunication Union",
+      "title": "Facts and Figures 2025: Affordability of ICT services",
+      "url": "https://www.itu.int/itu-d/reports/statistics/2025/10/15/ff25-affordability-of-ict-services/",
+      "measurementType": "direct_economy_count",
+      "confidence": "high",
+      "claim": "130 of 205 economies met the mobile-broadband affordability target.",
+      "caveat": "Economies are not weighted by population."
+    },
+    {
+      "metricId": "education_language_alignment",
+      "value": 60,
+      "unit": "percent",
+      "reportedGap": 40,
+      "observationYear": null,
+      "publishedYear": 2025,
+      "organisation": "UNESCO",
+      "title": "Languages matter: global guidance on multilingual education",
+      "url": "https://www.unesco.org/en/languages-education",
+      "measurementType": "derived_inverse_of_reported_global_exclusion",
+      "confidence": "medium",
+      "claim": "UNESCO reports that 40 per cent lack access to education in a language they speak and understand fluently.",
+      "caveat": "The estimate is widely reused and was refreshed in 2025 guidance, but its underlying global observation period is not presented as a single current year."
+    },
+    {
+      "metricId": "education_participation",
+      "value": 83,
+      "unit": "percent",
+      "reportedGap": 17,
+      "observationYear": 2024,
+      "publishedYear": 2026,
+      "organisation": "UNESCO Global Education Monitoring Report",
+      "title": "Monitoring education in the SDGs",
+      "url": "https://www.unesco.org/reports/gem-report/en/2026-monitoring-sdg4",
+      "measurementType": "derived_inverse_of_global_out_of_school_rate",
+      "confidence": "high",
+      "claim": "The global out-of-school rate was around 17 per cent in 2024, representing 273 million children and youth."
+    },
+    {
+      "metricId": "primary_completion_on_time",
+      "value": 88,
+      "unit": "percent",
+      "observationYear": 2024,
+      "publishedYear": 2026,
+      "organisation": "UNESCO Global Education Monitoring Report",
+      "title": "Monitoring education in the SDGs",
+      "url": "https://www.unesco.org/reports/gem-report/en/2026-monitoring-sdg4",
+      "measurementType": "direct_global_estimate",
+      "confidence": "high",
+      "claim": "88 per cent completed primary education on time in 2024."
+    },
+    {
+      "metricId": "minimum_reading_proficiency_primary",
+      "value": 58,
+      "unit": "percent",
+      "observationYear": null,
+      "publishedYear": 2026,
+      "organisation": "UNESCO Global Education Monitoring Report",
+      "title": "Monitoring education in the SDGs",
+      "url": "https://www.unesco.org/reports/gem-report/en/2026-monitoring-sdg4",
+      "measurementType": "global_modelled_estimate",
+      "confidence": "medium",
+      "claim": "58 per cent of students achieve minimum reading proficiency at the end of primary.",
+      "caveat": "The estimate has not been updated since COVID-19."
+    },
+    {
+      "metricId": "minimum_math_proficiency_primary",
+      "value": 44,
+      "unit": "percent",
+      "observationYear": null,
+      "publishedYear": 2026,
+      "organisation": "UNESCO Global Education Monitoring Report",
+      "title": "Monitoring education in the SDGs",
+      "url": "https://www.unesco.org/reports/gem-report/en/2026-monitoring-sdg4",
+      "measurementType": "global_modelled_estimate",
+      "confidence": "medium",
+      "claim": "44 per cent of students achieve minimum mathematics proficiency at the end of primary.",
+      "caveat": "The estimate has not been updated since COVID-19."
+    },
+    {
+      "metricId": "electricity_access",
+      "value": 92,
+      "unit": "percent",
+      "observationYear": 2024,
+      "publishedYear": 2026,
+      "organisation": "Tracking SDG 7 custodian agencies / World Bank",
+      "title": "Tracking SDG 7: The Energy Progress Report 2026",
+      "url": "https://www.worldbank.org/en/news/press-release/2026/06/16/accelerating-universal-energy-access",
+      "measurementType": "direct_global_estimate",
+      "confidence": "high",
+      "claim": "Global electricity access remained at 92 per cent in 2024; 655 million people lacked access."
+    },
+    {
+      "metricId": "clean_cooking_access",
+      "value": 75,
+      "unit": "percent_approximate",
+      "reportedGap": 25,
+      "observationYear": 2024,
+      "publishedYear": 2026,
+      "organisation": "Tracking SDG 7 custodian agencies / World Bank",
+      "title": "Tracking SDG 7: The Energy Progress Report 2026",
+      "url": "https://www.worldbank.org/en/news/press-release/2026/06/16/accelerating-universal-energy-access",
+      "measurementType": "derived_inverse_of_reported_approximate_gap",
+      "confidence": "medium",
+      "claim": "Approximately one quarter of the world's population, around two billion people, lacked clean cooking access.",
+      "caveat": "The dashboard displays 75 as an approximate inverse of the reported one-quarter gap."
+    },
+    {
+      "metricId": "child_cash_benefit_coverage",
+      "value": 23.9,
+      "unit": "percent",
+      "observationYear": "latest available",
+      "publishedYear": 2024,
+      "organisation": "International Labour Organization",
+      "title": "World Social Protection Report 2024–26, Chapter 4",
+      "url": "https://webapps.ilo.org/static/english/reports/flagship/world_social_protection_report_2024-26/Chapter%2004.html",
+      "measurementType": "global_modelled_estimate",
+      "confidence": "high",
+      "claim": "23.9 per cent of children aged 0 to 18 were covered by child cash benefits; 1.8 billion were not covered."
+    },
+    {
+      "metricId": "children_extreme_monetary_poverty",
+      "value": 412000000,
+      "unit": "children",
+      "observationYear": "current estimate in 2025 report",
+      "publishedYear": 2025,
+      "organisation": "UNICEF",
+      "title": "The State of the World's Children 2025",
+      "url": "https://www.unicef.org/reports/state-of-worlds-children/2025",
+      "measurementType": "global_count",
+      "confidence": "high",
+      "claim": "412 million children lived in extreme monetary poverty on less than US$3 per day.",
+      "caveat": "Not included in the score because this source presentation does not supply the matching global child denominator alongside the claim."
+    },
+    {
+      "metricId": "schools_online",
+      "value": 50,
+      "unit": "percent_approximate",
+      "observationYear": "latest programme estimate",
+      "publishedYear": 2026,
+      "organisation": "Giga / ITU / UNICEF",
+      "title": "Giga – Connecting Every School to the Internet",
+      "url": "https://www.itu.int/en/ITU-D/Initiatives/GIGA/Pages/default.aspx",
+      "measurementType": "approximate_global_programme_estimate",
+      "confidence": "low",
+      "claim": "Only around half of the world's schools are online; more than one billion children lack quality fixed broadband at home.",
+      "caveat": "Used only as a proxy for institutional bridging."
+    }
+  ],
+  "providerAccessGate": [
+    {
+      "provider": "OpenAI ChatGPT",
+      "status": "adult_mediated_for_under_13_education",
+      "source": "https://help.openai.com/en/articles/8313401-is-chatgpt-safe-for-all-ages",
+      "claim": "ChatGPT is not meant for children under 13; an adult must conduct interactions in educational contexts for under-13s."
+    },
+    {
+      "provider": "Anthropic Claude",
+      "status": "consumer_service_18_plus",
+      "source": "https://www.anthropic.com/policy",
+      "claim": "Claude.ai is not offered to users under 18."
+    },
+    {
+      "provider": "Microsoft Copilot",
+      "status": "13_plus_subject_to_region",
+      "source": "https://support.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-age-limits-and-parental-controls",
+      "claim": "Copilot is generally available to users over 18 and has expanded access to ages 13–18 subject to regional minimum ages."
+    },
+    {
+      "provider": "Google Gemini",
+      "status": "supervised_under_13_partial_geographic_availability",
+      "source": "https://support.google.com/gemini/answer/16109150?hl=en-GB",
+      "claim": "Parents can enable supervised under-13 access in supported regions, but it is unavailable for supervised accounts in the UK, EEA and Switzerland."
+    }
+  ],
+  "frameworkEvidence": [
+    {
+      "id": "unicef_child_centred_ai_requirements",
+      "organisation": "UNICEF",
+      "title": "Guidance on AI and children, version 3.0",
+      "url": "https://www.unicef.org/innocenti/reports/policy-guidance-ai-children",
+      "publishedYear": 2025,
+      "claim": "UNICEF defines ten requirements for child-centred AI.",
+      "usage": "Framework for the future safety-and-rights dimension, not an implementation score."
+    },
+    {
+      "id": "unicef_child_participation_gap",
+      "organisation": "UNICEF",
+      "title": "AI for children",
+      "url": "https://www.unicef.org/innocenti/projects/ai-for-children",
+      "publishedYear": 2026,
+      "claim": "Children remain largely excluded from shaping AI systems, especially in low-resource settings, and evidence on developmental effects is lacking.",
+      "usage": "Evidence that agency and participation remain unmeasured critical dimensions."
+    }
+  ]
+}

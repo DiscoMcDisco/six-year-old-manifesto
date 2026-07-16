@@ -1,0 +1,359 @@
+{
+  "version": "1.0.0",
+  "status": "official",
+  "title": "Six-Year-Old Test Metric Registry",
+  "principle": "The AI researches. The code measures.",
+  "scoring": {
+    "overallLabel": "Measured Enabling Substrate",
+    "warning": "This is not an end-to-end global capability score.",
+    "dimensionWeights": {
+      "digital_access": 0.25,
+      "language_and_understanding": 0.15,
+      "learning_and_knowledge": 0.2,
+      "economic_and_physical_capability": 0.25,
+      "institutional_bridging": 0.15
+    },
+    "rounding": "nearest_integer",
+    "confidenceAffectsScore": false,
+    "unknownCriticalDimensionsForceFail": true,
+    "criticalUnscoredDimensions": [
+      "practical_pathway_quality",
+      "safety_and_rights",
+      "agency_and_participation"
+    ],
+    "passRuleStatus": "official_v1",
+    "passRule": {
+      "allScoredDimensionsAtLeast": 80,
+      "allCriticalDimensionsScored": true,
+      "safeChildAppropriateAiGate": "pass"
+    },
+    "proxyDimensionsMayContributeToCurrentIndex": true,
+    "proxyDimensionsMaySatisfyOfficialPass": false
+  },
+  "dimensions": [
+    {
+      "id": "digital_access",
+      "label": "Digital access",
+      "description": "Can a child reach the digital layer needed to ask, learn and communicate?",
+      "scoreMethod": "mean_of_scored_metrics",
+      "metrics": [
+        {
+          "id": "internet_use_global",
+          "label": "Global internet use",
+          "role": "scored",
+          "unit": "percent",
+          "direction": "higher_is_better",
+          "population": "global population",
+          "normalisation": "raw_percent",
+          "preferredSources": [
+            "International Telecommunication Union"
+          ],
+          "refreshCadence": "annual",
+          "staleAfterMonths": 18
+        },
+        {
+          "id": "internet_use_rural",
+          "label": "Rural internet use",
+          "role": "scored",
+          "unit": "percent",
+          "direction": "higher_is_better",
+          "population": "global rural population",
+          "normalisation": "raw_percent",
+          "preferredSources": [
+            "International Telecommunication Union"
+          ],
+          "refreshCadence": "annual",
+          "staleAfterMonths": 18
+        },
+        {
+          "id": "mobile_phone_ownership_10_plus",
+          "label": "Mobile phone ownership",
+          "role": "scored",
+          "unit": "percent",
+          "direction": "higher_is_better",
+          "population": "people aged 10 years and older",
+          "normalisation": "raw_percent",
+          "preferredSources": [
+            "International Telecommunication Union"
+          ],
+          "refreshCadence": "annual",
+          "staleAfterMonths": 18
+        },
+        {
+          "id": "mobile_broadband_coverage",
+          "label": "Mobile broadband network coverage",
+          "role": "supporting",
+          "unit": "percent",
+          "direction": "higher_is_better",
+          "population": "global population",
+          "normalisation": "not_scored",
+          "preferredSources": [
+            "International Telecommunication Union"
+          ],
+          "refreshCadence": "annual",
+          "staleAfterMonths": 18,
+          "caveat": "Coverage does not prove device access, affordability, skills or actual use."
+        },
+        {
+          "id": "mobile_broadband_affordable_economies",
+          "label": "Economies meeting the mobile-broadband affordability target",
+          "role": "supporting",
+          "unit": "percent_of_economies",
+          "direction": "higher_is_better",
+          "population": "economies with available price data",
+          "normalisation": "not_scored",
+          "preferredSources": [
+            "International Telecommunication Union"
+          ],
+          "refreshCadence": "annual",
+          "staleAfterMonths": 18,
+          "caveat": "The denominator is economies, not people."
+        }
+      ]
+    },
+    {
+      "id": "language_and_understanding",
+      "label": "Language and understanding",
+      "description": "Can the child learn and act in a language they understand?",
+      "scoreMethod": "mean_of_scored_metrics",
+      "metrics": [
+        {
+          "id": "education_language_alignment",
+          "label": "Estimated access to education in a language understood",
+          "role": "scored_proxy",
+          "unit": "percent",
+          "direction": "higher_is_better",
+          "population": "global learners/population estimate",
+          "normalisation": "100_minus_reported_exclusion_percent",
+          "preferredSources": [
+            "UNESCO"
+          ],
+          "refreshCadence": "when_updated",
+          "staleAfterMonths": 60,
+          "caveat": "This is an education-language proxy, not a direct measure of AI language quality."
+        },
+        {
+          "id": "ai_language_quality",
+          "label": "AI quality across languages",
+          "role": "unscored",
+          "unit": "benchmark",
+          "direction": "higher_is_better",
+          "population": "selected languages and tasks",
+          "normalisation": "not_defined",
+          "preferredSources": [
+            "future controlled benchmark"
+          ],
+          "refreshCadence": "scheduled",
+          "staleAfterMonths": 6,
+          "caveat": "Interface-language availability is not evidence of equal reasoning, speech or local-context quality."
+        }
+      ]
+    },
+    {
+      "id": "learning_and_knowledge",
+      "label": "Learning and knowledge",
+      "description": "Can the child understand, evaluate and build on the answer?",
+      "scoreMethod": "mean_of_scored_metrics",
+      "metrics": [
+        {
+          "id": "education_participation",
+          "label": "Children and young people in education",
+          "role": "scored",
+          "unit": "percent",
+          "direction": "higher_is_better",
+          "population": "children, adolescents and youth in the relevant school-age cohorts",
+          "normalisation": "100_minus_out_of_school_rate",
+          "preferredSources": [
+            "UNESCO Global Education Monitoring Report"
+          ],
+          "refreshCadence": "annual",
+          "staleAfterMonths": 24
+        },
+        {
+          "id": "primary_completion_on_time",
+          "label": "On-time primary completion",
+          "role": "scored",
+          "unit": "percent",
+          "direction": "higher_is_better",
+          "population": "primary completion cohort",
+          "normalisation": "raw_percent",
+          "preferredSources": [
+            "UNESCO Global Education Monitoring Report"
+          ],
+          "refreshCadence": "annual",
+          "staleAfterMonths": 24
+        },
+        {
+          "id": "minimum_reading_proficiency_primary",
+          "label": "Minimum reading proficiency at end of primary",
+          "role": "scored",
+          "unit": "percent",
+          "direction": "higher_is_better",
+          "population": "students reaching end of primary",
+          "normalisation": "raw_percent",
+          "preferredSources": [
+            "UNESCO Global Education Monitoring Report"
+          ],
+          "refreshCadence": "when_updated",
+          "staleAfterMonths": 60,
+          "caveat": "The latest global estimate has not been updated since COVID-19."
+        },
+        {
+          "id": "minimum_math_proficiency_primary",
+          "label": "Minimum mathematics proficiency at end of primary",
+          "role": "scored",
+          "unit": "percent",
+          "direction": "higher_is_better",
+          "population": "students reaching end of primary",
+          "normalisation": "raw_percent",
+          "preferredSources": [
+            "UNESCO Global Education Monitoring Report"
+          ],
+          "refreshCadence": "when_updated",
+          "staleAfterMonths": 60,
+          "caveat": "The latest global estimate has not been updated since COVID-19."
+        }
+      ]
+    },
+    {
+      "id": "economic_and_physical_capability",
+      "label": "Economic and physical capability",
+      "description": "Can the surrounding household and infrastructure support action?",
+      "scoreMethod": "mean_of_scored_metrics",
+      "metrics": [
+        {
+          "id": "electricity_access",
+          "label": "Access to electricity",
+          "role": "scored",
+          "unit": "percent",
+          "direction": "higher_is_better",
+          "population": "global population",
+          "normalisation": "raw_percent",
+          "preferredSources": [
+            "Tracking SDG 7 custodian agencies",
+            "World Bank"
+          ],
+          "refreshCadence": "annual",
+          "staleAfterMonths": 24
+        },
+        {
+          "id": "clean_cooking_access",
+          "label": "Access to clean cooking",
+          "role": "scored",
+          "unit": "percent",
+          "direction": "higher_is_better",
+          "population": "global population",
+          "normalisation": "raw_percent_or_inverse_reported_gap",
+          "preferredSources": [
+            "Tracking SDG 7 custodian agencies",
+            "World Bank"
+          ],
+          "refreshCadence": "annual",
+          "staleAfterMonths": 24
+        },
+        {
+          "id": "child_cash_benefit_coverage",
+          "label": "Children receiving a child or family cash benefit",
+          "role": "scored",
+          "unit": "percent",
+          "direction": "higher_is_better",
+          "population": "children aged 0 to 18",
+          "normalisation": "raw_percent",
+          "preferredSources": [
+            "International Labour Organization"
+          ],
+          "refreshCadence": "when_updated",
+          "staleAfterMonths": 36
+        },
+        {
+          "id": "children_extreme_monetary_poverty",
+          "label": "Children in extreme monetary poverty",
+          "role": "supporting",
+          "unit": "count",
+          "direction": "lower_is_better",
+          "population": "children",
+          "normalisation": "not_scored_without_matching_denominator",
+          "preferredSources": [
+            "UNICEF"
+          ],
+          "refreshCadence": "when_updated",
+          "staleAfterMonths": 36,
+          "caveat": "The count is displayed but not converted into a score without a source-matched denominator."
+        }
+      ]
+    },
+    {
+      "id": "institutional_bridging",
+      "label": "Institutional bridging",
+      "description": "Can a school, library, mentor, public service or civic institution carry the idea into the physical world?",
+      "scoreMethod": "proxy_only",
+      "metrics": [
+        {
+          "id": "schools_online",
+          "label": "Schools connected to the internet",
+          "role": "scored_proxy",
+          "unit": "percent",
+          "direction": "higher_is_better",
+          "population": "world schools",
+          "normalisation": "raw_approximate_percent",
+          "preferredSources": [
+            "Giga",
+            "International Telecommunication Union",
+            "UNICEF"
+          ],
+          "refreshCadence": "when_updated",
+          "staleAfterMonths": 36,
+          "caveat": "Connectivity is not a measure of mentoring, laboratories, workshops, safeguarding or civic support."
+        }
+      ]
+    },
+    {
+      "id": "practical_pathway_quality",
+      "label": "Practical pathway quality",
+      "description": "Can an AI turn an ambition into safe, local, age-appropriate and achievable steps?",
+      "scoreMethod": "future_controlled_benchmark",
+      "metrics": [],
+      "status": "unknown_critical"
+    },
+    {
+      "id": "safety_and_rights",
+      "label": "Safety and rights",
+      "description": "Can the child explore without exploitation, privacy loss, discrimination or dangerous guidance?",
+      "scoreMethod": "future_implementation_index",
+      "metrics": [],
+      "status": "unknown_critical"
+    },
+    {
+      "id": "agency_and_participation",
+      "label": "Agency and participation",
+      "description": "Can the child create, choose, question and influence outcomes rather than only consume an answer?",
+      "scoreMethod": "future_global_indicator_or_benchmark",
+      "metrics": [],
+      "status": "unknown_critical"
+    }
+  ],
+  "approvedSourceFamilies": [
+    "International Telecommunication Union",
+    "UNESCO",
+    "UNICEF",
+    "International Labour Organization",
+    "World Bank",
+    "World Health Organization",
+    "UNDP",
+    "official AI provider documentation",
+    "peer-reviewed primary research where no public statistical authority exists"
+  ],
+  "runCounting": {
+    "initialOfficialRun": 1,
+    "minimumBoundaryDays": 90,
+    "incrementRule": "Increment totalRuns exactly once when a new eligible research result is validated and approved as the safe published result."
+  },
+  "rejectedPractices": [
+    "Treating network coverage as equivalent to meaningful access",
+    "Combining differently defined populations into a fake cohort funnel",
+    "Converting missing data to zero, fifty or an inferred value",
+    "Allowing the research model to alter metric definitions, weights or scores",
+    "Using publication date as though it were the observation date",
+    "Scoring a raw count without a source-matched denominator"
+  ]
+}
