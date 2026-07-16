@@ -1,8 +1,8 @@
 # The Six-Year-Old Test
 
-## Calibration status
+## Official Run 1
 
-Run 0 is a calibration exercise, not an official quarterly result.
+Official Run 1 was completed on 16 July 2026 and establishes the first published world snapshot.
 
 The Test asks whether the present world can turn advanced intelligence into real capability for an ordinary six-year-old. The child is not being examined. The surrounding technical, economic, institutional and rights environment is.
 
@@ -21,9 +21,9 @@ The application:
 5. renders the hardcoded infographic;
 6. requires approval before a run becomes the safe published result.
 
-## What the calibration score means
+## What the score means
 
-The Measured Enabling Substrate is a provisional composite of five dimensions for which global measures or explicit proxies currently exist:
+The Measured Enabling Substrate is a composite of five dimensions for which global measures or explicit proxies currently exist:
 
 - digital access;
 - language and understanding;
@@ -43,13 +43,13 @@ Their absence forces the world verdict to fail.
 
 ## Scoring rules
 
-Within each scored dimension, the current calibration uses the arithmetic mean of its scored metrics. The dimension scores are combined with the fixed provisional weights in `metric-registry.json`.
+Within each scored dimension, the current Test uses the arithmetic mean of its scored metrics. The dimension scores are combined with the fixed official weights in `metric-registry.json`.
 
 Confidence is displayed separately and does not silently reduce or inflate a score.
 
 Unknown values remain unknown.
 
-Proxy dimensions may contribute to a calibration index, but they cannot independently satisfy an official pass condition.
+Proxy dimensions may contribute to the current index, but they cannot independently satisfy an official pass condition.
 
 ## Evidence rules
 
@@ -69,9 +69,15 @@ Raw counts are not converted into percentages without a denominator from the sam
 
 Measures with different populations, years or denominators are never multiplied into a fake cohort funnel.
 
-## Quarterly run
+## Run counting and quarterly boundary
 
-A safe result is cached for three months.
+Official Run 1 sets `totalRuns` to 1.
+
+Each later result increments the count exactly once, only after the 90-day boundary has passed, the Test is triggered, the evidence is validated and the result is approved for publication.
+
+## Scheduled research run
+
+A safe result is cached for at least 90 days.
 
 Before the next eligible date, the website returns the current safe result and its completion date. After eligibility, the first accepted trigger starts one research run while all visitors continue to see the previous safe result.
 
@@ -85,7 +91,7 @@ A new result becomes public only after:
 
 ## Cost control
 
-The quarterly job should:
+The scheduled job should:
 
 - query only approved primary-source families;
 - check first for material newer than the previous run;
@@ -96,4 +102,4 @@ The quarterly job should:
 - generate no charts or scores;
 - propose no more than six short call-outs.
 
-The expensive work belongs in the first calibration. Routine runs should be small evidence updates.
+The expensive work belongs in the first full research run. Routine runs should be small evidence updates.
