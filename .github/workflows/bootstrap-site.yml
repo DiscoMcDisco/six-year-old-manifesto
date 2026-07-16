@@ -1,0 +1,35 @@
+name: Bootstrap Manifesto Site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - site.zip.b64
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unpack prepared site
+        shell: bash
+        run: |
+          if [ ! -f site.zip.b64 ]; then
+            echo "No bootstrap bundle present; nothing to do."
+            exit 0
+          fi
+          base64 --decode site.zip.b64 > site.zip
+          rm -rf .bootstrap-site
+          mkdir .bootstrap-site
+          unzip -q site.zip -d .bootstrap-site
+          cp -R .bootstrap-site/six-year-old-manifesto/. .
+          rm -rf .bootstrap-site site.zip site.zip.b64
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Publish complete Manifesto site [skip ci]"
+          git push
