@@ -70,6 +70,8 @@ h1 { margin: 0; max-width: 920px; font-size: clamp(3.25rem, 9vw, 8.4rem); line-h
 h1 span { display: block; color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, .45); }
 .hero-copy { max-width: 720px; font-size: clamp(1.05rem, 2vw, 1.35rem); color: var(--muted); margin: 30px 0 0; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.test-run-status { display: flex; align-items: center; gap: 8px; margin: 16px 0 0; color: var(--dim); font-size: .82rem; }
+.test-run-status span { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 14px rgba(185,247,199,.55); flex: 0 0 auto; }
 .primary-button { border: 0; border-radius: 999px; padding: 13px 18px; color: #09100b; background: var(--green); text-decoration: none; font-weight: 850; box-shadow: 0 10px 35px rgba(185, 247, 199, .13); transition: transform .2s ease, box-shadow .2s ease; cursor: pointer; }
 .primary-button:hover { transform: translateY(-2px); box-shadow: 0 14px 42px rgba(185, 247, 199, .2); }
 

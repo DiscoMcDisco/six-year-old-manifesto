@@ -1,0 +1,260 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://six-year-old-manifesto.vercel.app/data/test/quarterly-run.schema.json",
+  "title": "Six-Year-Old Test Quarterly Research Payload",
+  "description": "The research model updates evidence only. Application code validates, scores and renders the result.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "runId",
+    "runType",
+    "startedAt",
+    "completedAt",
+    "previousRunId",
+    "sourcesCutoff",
+    "metricUpdates",
+    "providerGateUpdates",
+    "candidateCallouts",
+    "researchWarnings"
+  ],
+  "properties": {
+    "runId": {
+      "type": "string",
+      "pattern": "^quarterly-[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "runType": {
+      "const": "quarterly_evidence_update"
+    },
+    "startedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "completedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "previousRunId": {
+      "type": "string"
+    },
+    "sourcesCutoff": {
+      "type": "string",
+      "format": "date"
+    },
+    "metricUpdates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/metricUpdate"
+      }
+    },
+    "providerGateUpdates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/providerGateUpdate"
+      }
+    },
+    "candidateCallouts": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "body",
+          "metricIds"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "body": {
+            "type": "string",
+            "maxLength": 240
+          },
+          "metricIds": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "researchWarnings": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 300
+      }
+    }
+  },
+  "$defs": {
+    "metricUpdate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metricId",
+        "status",
+        "value",
+        "unit",
+        "observationPeriod",
+        "publicationDate",
+        "sourceOrganisation",
+        "sourceTitle",
+        "sourceUrl",
+        "measurementType",
+        "population",
+        "geography",
+        "confidence",
+        "extractedClaim",
+        "caveats"
+      ],
+      "properties": {
+        "metricId": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "updated",
+            "unchanged",
+            "unavailable",
+            "conflict"
+          ]
+        },
+        "value": {
+          "type": [
+            "number",
+            "integer",
+            "string",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "string"
+        },
+        "numerator": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "denominator": {
+          "type": [
+            "number",
+            "integer",
+            "null"
+          ]
+        },
+        "observationPeriod": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "publicationDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "sourceOrganisation": {
+          "type": "string"
+        },
+        "sourceTitle": {
+          "type": "string"
+        },
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "corroboratingSourceUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "measurementType": {
+          "type": "string",
+          "enum": [
+            "direct_global_estimate",
+            "global_modelled_estimate",
+            "direct_country_or_economy_count",
+            "derived_inverse_of_reported_gap",
+            "proxy",
+            "not_available"
+          ]
+        },
+        "population": {
+          "type": "string"
+        },
+        "geography": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "none"
+          ]
+        },
+        "extractedClaim": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "caveats": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 300
+          }
+        }
+      }
+    },
+    "providerGateUpdate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "status",
+        "sourceUrl",
+        "checkedAt",
+        "claim"
+      ],
+      "properties": {
+        "provider": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "checkedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "claim": {
+          "type": "string",
+          "maxLength": 500
+        }
+      }
+    }
+  },
+  "nonGoals": [
+    "The model must not calculate dimension or overall scores.",
+    "The model must not alter metric definitions or weights.",
+    "The model must not infer missing values.",
+    "The model must not produce narrative outside the schema.",
+    "The model must not treat publication date as observation date."
+  ]
+}
