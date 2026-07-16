@@ -1,6 +1,7 @@
 {
-  "version": "0.1.0",
-  "runId": "calibration-2026-07-16",
+  "version": "1.0.0",
+  "runId": "run-1-2026-07-16",
+  "runNumber": 1,
   "safeResearchCompleted": "2026-07-16",
   "sourcesCutoff": "2026-07-16",
   "entries": [
