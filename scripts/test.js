@@ -1,5 +1,5 @@
 const DATA_PATHS = {
-  result: 'data/test/calibration-run-0.json',
+  result: 'data/test/current-result.json',
   evidence: 'data/test/evidence-ledger.json'
 };
 
@@ -139,7 +139,7 @@ function setupRunButton(result) {
   button.addEventListener('click', () => {
     banner.classList.add('active');
     banner.focus({ preventScroll: true });
-    toast.textContent = `Current safe result loaded · ${formatDate(result.safeResearchCompleted)}`;
+    toast.textContent = `Official Run ${result.runNumber} loaded · ${formatDate(result.safeResearchCompleted)}`;
     toast.classList.add('visible');
     window.setTimeout(() => toast.classList.remove('visible'), 2200);
     window.setTimeout(() => banner.classList.remove('active'), 1800);
@@ -151,7 +151,7 @@ function setupShare() {
   document.querySelectorAll('[data-share]').forEach((button) => {
     button.addEventListener('click', async () => {
       const shareData = {
-        title: 'The Six-Year-Old Test · Calibration Run 0',
+        title: 'The Six-Year-Old Test · Official Run 1',
         text: 'Can today’s world turn advanced intelligence into real capability for an ordinary child?',
         url: window.location.href
       };
@@ -196,6 +196,7 @@ async function initialiseTest() {
     document.querySelector('#verdict-summary').textContent = result.verdict.summary;
     document.querySelector('[data-safe-date]').textContent = formatDate(result.safeResearchCompleted);
     document.querySelector('[data-next-date]').textContent = formatDate(result.nextRefreshEligible);
+    document.querySelector('[data-total-runs]').textContent = result.totalRuns;
     document.querySelector('[data-pathway-warning]').textContent = result.pathwayWarning;
 
     renderDimensions(result.dimensions);
@@ -212,7 +213,7 @@ async function initialiseTest() {
     document.body.classList.add('data-load-failed');
     const toast = document.querySelector('[data-run-toast]');
     if (toast) {
-      toast.textContent = 'The calibration data could not be loaded.';
+      toast.textContent = 'The Test data could not be loaded.';
       toast.classList.add('visible');
     }
     activateRevealObserver();
