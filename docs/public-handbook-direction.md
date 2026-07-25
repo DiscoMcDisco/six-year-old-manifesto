@@ -32,3 +32,19 @@ Technical identifiers remain unchanged in data and methodology.
 - Green: progress and available routes
 - Amber: caution and uncertainty
 - Muted red: failure or serious concern
+
+## Design governance extension
+
+The Public Handbook direction remains the canonical guide to public tone, language and reading experience.
+
+The later [Design Constitution](design-constitution.md) establishes the enduring rules behind the interface. The [Semantic Evidence Language](semantic-evidence-language.md) now provides the more precise governing definition for colour use.
+
+Where the broad colour roles above could be read as decorative or brand-oriented, SEL takes precedence:
+
+- blue means evidenced
+- green means achievable now
+- amber means plausible or emerging
+- red means unsupported, blocked or contradicted
+- grey means unknown
+
+Paper, charcoal and neutral surfaces remain the reading environment rather than evidence states. Implementation changes should extend the Public Handbook treatment without erasing its existing history or language decisions.
