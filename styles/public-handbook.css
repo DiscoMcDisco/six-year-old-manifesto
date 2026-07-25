@@ -1,20 +1,26 @@
 :root {
   --ink: #272823;
-  --muted: #66675f;
-  --dim: #87887f;
+  --muted: #595b54;
+  --dim: #70726b;
   --bg: #f3f0e8;
   --paper: #fbfaf6;
-  --panel: rgba(251,250,246,.84);
+  --panel: rgba(251,250,246,.9);
   --panel-strong: #fbfaf6;
-  --line: rgba(39,40,35,.16);
-  --line-strong: rgba(39,40,35,.34);
+  --line: rgba(39,40,35,.2);
+  --line-strong: rgba(39,40,35,.4);
 
   /* Semantic Evidence Language */
   --evidence: #315f78;
-  --available: #3f6f53;
-  --emerging: #9a672f;
-  --blocked: #934e50;
-  --unknown: #74766f;
+  --available: #356348;
+  --emerging: #8b5b25;
+  --blocked: #8a4548;
+  --unknown: #666961;
+
+  /* Compatibility aliases for the older component stylesheet. */
+  --blue: var(--evidence);
+  --green: var(--available);
+  --amber: var(--emerging);
+  --pink: var(--blocked);
 
   --radius: 14px;
   --shadow: 0 16px 42px rgba(45,42,34,.08);
@@ -30,7 +36,7 @@ strong { color: var(--ink); }
 .noise { opacity: .012; mix-blend-mode: multiply; }
 
 .nav {
-  background: rgba(243,240,232,.93);
+  background: rgba(243,240,232,.95);
   border-bottom-color: var(--line);
   box-shadow: 0 2px 16px rgba(45,42,34,.035);
 }
@@ -38,7 +44,7 @@ strong { color: var(--ink); }
 .brand-mark { border-color: var(--ink); border-radius: 4px; transform: rotate(-2deg); }
 .brand-mark::before { border-color: var(--ink); border-radius: 50%; opacity: .55; }
 .brand-mark::after { background: var(--ink); opacity: .72; }
-.nav-links a, .ghost-button { background: rgba(251,250,246,.55); color: var(--muted); border-radius: 7px; }
+.nav-links a, .ghost-button { background: rgba(251,250,246,.62); color: var(--muted); border-radius: 7px; }
 .nav-links a:hover, .ghost-button:hover { color: var(--ink); border-color: var(--ink); }
 
 .hero, .test-hero { min-height: auto; padding-top: clamp(80px, 11vw, 140px); }
@@ -98,18 +104,18 @@ section { padding: clamp(70px, 9vw, 110px) 0; }
 .pillar-num { color: var(--unknown); }
 .architecture-card::before { margin-bottom: 38px; height: 3px; border-radius: 0; background: var(--ink); opacity: .2; }
 .architecture-card li { color: var(--ink); border-top-color: var(--line); }
-.foundry-rule, .mission { background: rgba(154,103,47,.075); border-color: rgba(154,103,47,.28); }
+.foundry-rule, .mission { background: rgba(139,91,37,.075); border-color: rgba(139,91,37,.3); }
 .foundry-rule, .foundry-rule strong { color: var(--ink) !important; }
 .mission small { color: var(--emerging); }
 .loop-item { background: rgba(39,40,35,.045); border-color: rgba(39,40,35,.11); }
 .loop-item span { color: var(--ink); }
 .loop-item::before { color: var(--unknown); }
-.status { border-radius: 4px; font-weight: 700; }
-.status.live { color: var(--available); background: rgba(63,111,83,.09); }
-.status.pressure { color: var(--emerging); background: rgba(154,103,47,.10); }
-.status.risk { color: var(--blocked); background: rgba(147,78,80,.10); }
+.status { border-radius: 4px; font-weight: 750; }
+.status.live { color: var(--available); background: rgba(53,99,72,.1); }
+.status.pressure { color: var(--emerging); background: rgba(139,91,37,.11); }
+.status.risk { color: var(--blocked); background: rgba(138,69,72,.11); }
 .metric { color: var(--ink); font-family: Georgia, serif; }
-.evidence-card a, .source-row a, .method-links a, .sources a { color: var(--evidence); text-decoration-color: rgba(49,95,120,.35); }
+.evidence-card a, .source-row a, .method-links a, .sources a { color: var(--evidence); text-decoration-color: rgba(49,95,120,.4); }
 .evidence-card { border-left: 4px solid var(--line); }
 .evidence-card:has(.status.live) { border-left-color: var(--available); }
 .evidence-card:has(.status.pressure) { border-left-color: var(--emerging); }
@@ -130,7 +136,7 @@ footer { border-top-color: var(--line); color: var(--muted); }
 .score-orb::before { background: var(--paper); border-color: var(--line); }
 .score-orb strong { color: var(--ink); }
 .score-caption p, .dimension-card p, .method-warning, .gate-copy p, .source-row p { color: var(--muted); }
-.verdict-strip { background: rgba(251,250,246,.72); border-color: var(--line); }
+.verdict-strip { background: rgba(251,250,246,.78); border-color: var(--line); }
 .verdict-strip-grid > div { border-color: var(--line); }
 .verdict-strip small { color: var(--dim); }
 .checkpoint-track { background: repeating-linear-gradient(90deg, transparent 0 calc(25% - 1px), rgba(39,40,35,.09) calc(25% - 1px) 25%); border-color: var(--line); }
@@ -141,11 +147,24 @@ footer { border-top-color: var(--line); color: var(--muted); }
 .dimension-card[data-status="emerging"], .dimension-card.emerging { border-left-color: var(--emerging); }
 .dimension-card[data-status="blocked"], .dimension-card.blocked { border-left-color: var(--blocked); }
 .dimension-card[data-status="unknown"], .dimension-card.unknown { border-left-color: var(--unknown); }
-.pathway-section, .gate-section { background: rgba(251,250,246,.5); border-color: var(--line); }
-.provider-row, .method-rules div { background: rgba(251,250,246,.72); border-color: var(--line); }
-.provider-status { color: var(--emerging); }
+.pathway-section, .gate-section { background: rgba(251,250,246,.55); border-color: var(--line); }
+.provider-row, .method-rules div { background: rgba(251,250,246,.8); border-color: var(--line); }
+.provider-status { color: var(--emerging); font-weight: 700; }
 .unknown-card { border-left: 4px solid var(--unknown); }
 .run-toast { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+/* Explicit overrides for legacy Test components that previously used neon tokens. */
+.callout-index { color: var(--evidence); font-weight: 850; }
+.callout-card p { color: var(--muted); }
+.safe-run-banner { border-color: rgba(53,99,72,.3); background: rgba(53,99,72,.07); }
+.safe-run-banner.active { border-color: rgba(53,99,72,.55); background: rgba(53,99,72,.11); }
+.safe-run-banner strong { color: var(--ink); }
+.safe-run-banner span { color: var(--muted); }
+.method-warning { border-left-color: var(--emerging); }
+.gate-verdict strong { color: var(--blocked); }
+.dimension-card::after { background: linear-gradient(90deg, var(--evidence) calc(var(--dimension-score) * 1%), rgba(39,40,35,.09) 0); }
+.dimension-card.unknown::after { background: repeating-linear-gradient(90deg, rgba(102,105,97,.6) 0 7px, transparent 7px 13px); }
+.dimension-card.unknown .dimension-score { -webkit-text-stroke-color: rgba(102,105,97,.8); }
 
 @media (max-width: 720px) {
   .nav-links a:not(:last-child) { display: none; }
