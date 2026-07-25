@@ -98,12 +98,28 @@ section { padding: clamp(70px, 9vw, 110px) 0; }
 .architecture-card::before { margin-bottom: 38px; height: 3px; border-radius: 0; }
 .architecture-card li { color: var(--ink); border-top-color: var(--line); }
 .foundry-rule, .mission { background: rgba(57,115,83,.07); border-color: rgba(57,115,83,.25); }
+.foundry-rule,
+.foundry-rule strong {
+  color: var(--ink) !important;
+}
+.loop-item {
+  background: rgba(37,40,32,.055);
+  border-color: rgba(37,40,32,.12);
+}
+.loop-item span { color: var(--ink); }
+.loop-item::before { color: var(--green); }
 .status { border-radius: 4px; }
 .status.live { color: var(--green); background: rgba(57,115,83,.09); }
 .status.pressure { color: var(--amber); background: rgba(177,108,45,.10); }
 .status.risk { color: var(--pink); background: rgba(164,84,98,.10); }
 .metric { color: var(--ink); font-family: Georgia, serif; }
-.evidence-card a, .source-row a, .method-links a { color: var(--blue); }
+.evidence-card a, .source-row a, .method-links a, .sources a { color: var(--blue); }
+.score {
+  background: rgba(37,40,32,.05);
+  border-color: rgba(37,40,32,.12);
+}
+.score span { color: var(--ink); }
+.risk-row { border-top-color: var(--line); }
 .cta { background: var(--ink); color: var(--bg); }
 .cta .kicker { color: #a8d1df; }
 .cta p { color: #d4d3ca; }
@@ -137,4 +153,5 @@ footer { border-top-color: var(--line); color: var(--muted); }
   .clock-scene { min-height: 340px; }
   .question-card { right: 0; bottom: 5px; }
   .section-head { gap: 22px; }
+  .loop-item { grid-template-columns: 34px 1fr; gap: 10px; }
 }
