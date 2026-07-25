@@ -14,6 +14,10 @@ This repository contains the public-facing single-page manifesto, its evidence l
 - `scripts/test.js` - deterministic dashboard rendering from static JSON
 - `data/test/` - metric registry, evidence ledger, current official result and scheduled research payload schema
 - `docs/six-year-old-test-methodology.md` - scoring, evidence and cost-control rules
+- `docs/public-handbook-direction.md` - current public tone, language and reading direction
+- `docs/design-constitution.md` - enduring principles governing visual meaning and restraint
+- `docs/semantic-evidence-language.md` - portable semantic colour and evidence-status specification
+- `docs/decisions/` - concise records of significant project decisions
 - `vercel.json` - static hosting configuration
 
 ## Local preview
