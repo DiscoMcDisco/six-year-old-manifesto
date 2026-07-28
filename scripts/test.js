@@ -18,24 +18,54 @@ const escapeHtml = (value = '') => String(value)
 
 const confidenceLabel = (value) => value === 'none' ? 'Unmeasured' : `${value} confidence`;
 
+const DIMENSION_QUESTIONS = {
+  digital_access: 'Can I get online?',
+  language_and_understanding: 'Can I understand?',
+  learning_and_knowledge: 'Can I use what I learn?',
+  economic_and_physical_capability: 'Do I have what I need to act?',
+  institutional_bridging: 'Can someone help me take the next step?',
+  practical_pathway_quality: 'Could I actually do it?',
+  safety_and_rights: 'Is the route safe and fair?',
+  agency_and_participation: 'Can I keep going and shape decisions?'
+};
+
+const dimensionEvidenceState = (dimension) => {
+  if (dimension.score === null) return { className: 'unknown', label: 'Unknown' };
+  if (String(dimension.status).includes('proxy')) return { className: 'emerging', label: 'Proxy evidence' };
+  return { className: 'evidence', label: 'Measured evidence' };
+};
+
 function renderDimensions(dimensions) {
   const container = document.querySelector('[data-dimensions]');
   if (!container) return;
 
   container.innerHTML = dimensions.map((dimension, index) => {
     const unknown = dimension.score === null;
-    const score = unknown ? '?' : dimension.score;
+    const state = dimensionEvidenceState(dimension);
+    const value = unknown
+      ? '<span>Not measured</span>'
+      : `<strong>${Number(dimension.score)}</strong><span>/ 100</span>`;
+
     return `
-      <article class="dimension-card reveal ${unknown ? 'unknown' : ''}" style="--dimension-score:${unknown ? 0 : dimension.score}">
-        <div class="dimension-meta">
-          <span class="dimension-number">${String(index + 1).padStart(2, '0')}</span>
-          <span class="dimension-confidence">${escapeHtml(confidenceLabel(dimension.confidence))}</span>
+      <details class="dimension-row reveal ${state.className}">
+        <summary>
+          <span class="dimension-index">${String(index + 1).padStart(2, '0')}</span>
+          <span class="dimension-title">
+            <span class="dimension-question">${escapeHtml(DIMENSION_QUESTIONS[dimension.id] || dimension.label)}</span>
+            <span class="dimension-label">${escapeHtml(dimension.label)}</span>
+          </span>
+          <span class="dimension-value">${value}</span>
+        </summary>
+        <div class="dimension-body">
+          <span class="dimension-evidence-state">${escapeHtml(state.label)} · ${escapeHtml(confidenceLabel(dimension.confidence))}</span>
+          <p>${escapeHtml(dimension.summary)}</p>
         </div>
-        <div class="dimension-score">${score}</div>
-        <h3>${escapeHtml(dimension.label)}</h3>
-        <p>${escapeHtml(dimension.summary)}</p>
-      </article>`;
+      </details>`;
   }).join('');
+
+  container.setAttribute('aria-busy', 'false');
+  const status = document.querySelector('[data-load-status]');
+  if (status) status.textContent = `Official Run 1 loaded. ${dimensions.length} measures are available to explore.`;
 }
 
 function renderCheckpoints(checkpoints) {
@@ -61,7 +91,7 @@ function renderCallouts(callouts) {
 
   container.innerHTML = callouts.map((callout, index) => `
     <article class="callout-card reveal">
-      <span class="callout-index">FINDING ${String(index + 1).padStart(2, '0')}</span>
+      <span class="callout-index">Finding ${String(index + 1).padStart(2, '0')}</span>
       <h3>${escapeHtml(callout.title)}</h3>
       <p>${escapeHtml(callout.body)}</p>
     </article>`).join('');
@@ -139,11 +169,11 @@ function setupRunButton(result) {
   button.addEventListener('click', () => {
     banner.classList.add('active');
     banner.focus({ preventScroll: true });
-    toast.textContent = `Official Run ${result.runNumber} loaded · ${formatDate(result.safeResearchCompleted)}`;
+    toast.textContent = `Current official result · evidence checked ${formatDate(result.safeResearchCompleted)}`;
     toast.classList.add('visible');
     window.setTimeout(() => toast.classList.remove('visible'), 2200);
     window.setTimeout(() => banner.classList.remove('active'), 1800);
-    document.querySelector('#dimensions')?.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('#child-path')?.scrollIntoView({ behavior: 'smooth' });
   });
 }
 
@@ -174,6 +204,14 @@ function setupShare() {
   });
 }
 
+function setupContentsMenus() {
+  document.querySelectorAll('.contents-menu').forEach((menu) => {
+    menu.querySelectorAll('a, button').forEach((control) => {
+      control.addEventListener('click', () => menu.removeAttribute('open'));
+    });
+  });
+}
+
 async function initialiseTest() {
   try {
     const [resultResponse, evidenceResponse] = await Promise.all([
@@ -191,12 +229,9 @@ async function initialiseTest() {
     ]);
 
     document.querySelector('[data-overall-score]').textContent = result.measuredSubstrate.score;
-    document.querySelector('[data-score-orb]').style.setProperty('--score', result.measuredSubstrate.score);
     document.querySelector('#verdict-title').textContent = result.verdict.headline;
-    document.querySelector('#verdict-summary').textContent = result.verdict.summary;
     document.querySelector('[data-safe-date]').textContent = formatDate(result.safeResearchCompleted);
     document.querySelector('[data-next-date]').textContent = formatDate(result.nextRefreshEligible);
-    document.querySelector('[data-total-runs]').textContent = result.totalRuns;
     document.querySelector('[data-pathway-warning]').textContent = result.pathwayWarning;
 
     renderDimensions(result.dimensions);
@@ -207,15 +242,21 @@ async function initialiseTest() {
     renderSources(evidence.entries);
     setupRunButton(result);
     setupShare();
+    setupContentsMenus();
     activateRevealObserver();
   } catch (error) {
     console.error(error);
     document.body.classList.add('data-load-failed');
+    const dimensions = document.querySelector('[data-dimensions]');
+    dimensions?.setAttribute('aria-busy', 'false');
     const toast = document.querySelector('[data-run-toast]');
     if (toast) {
       toast.textContent = 'The Test data could not be loaded.';
       toast.classList.add('visible');
     }
+    const status = document.querySelector('[data-load-status]');
+    if (status) status.textContent = 'The Test data could not be loaded.';
+    setupContentsMenus();
     activateRevealObserver();
   }
 }

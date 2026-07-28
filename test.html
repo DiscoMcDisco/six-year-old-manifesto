@@ -4,84 +4,128 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="Official Run 1 of the Six-Year-Old Test: can today's world turn advanced intelligence into real capability for an ordinary child?" />
-  <meta name="theme-color" content="#f4f0e5" />
-  <meta property="og:title" content="Run the Six-Year-Old Test" />
+  <meta name="theme-color" content="#f3f0e8" />
+  <meta property="og:title" content="The current Six-Year-Old Test result" />
   <meta property="og:description" content="A dated, evidence-backed audit of whether intelligence can become real agency for an ordinary child." />
   <meta property="og:type" content="website" />
-  <title>Run the Test · The Six-Year-Old Manifesto</title>
+  <title>The current result · The Six-Year-Old Manifesto</title>
   <link rel="stylesheet" href="styles/manifesto.css" />
   <link rel="stylesheet" href="styles/test.css" />
   <link rel="stylesheet" href="styles/public-handbook.css" />
+  <link rel="stylesheet" href="styles/softening-pass.css" />
   <script src="scripts/test.js" defer></script>
 </head>
 <body class="test-page">
+  <a class="skip-link" href="#main-content">Skip to the main content</a>
   <div class="noise" aria-hidden="true"></div>
 
-  <nav class="nav">
+  <svg class="icon-library" aria-hidden="true">
+    <symbol id="icon-ask" viewBox="0 0 32 32"><path d="M5 6.5h22v15H15l-6.5 5v-5H5z"/><path d="M11 12h10M11 16h7"/></symbol>
+    <symbol id="icon-understand" viewBox="0 0 32 32"><path d="M4 7.5c5-1.5 9-.7 12 2.2v16c-3-2.8-7-3.6-12-2.1zM28 7.5c-5-1.5-9-.7-12 2.2v16c3-2.8 7-3.6 12-2.1z"/></symbol>
+    <symbol id="icon-help" viewBox="0 0 32 32"><path d="M5 25h22M8 25V8h16v17M12 21l8-9M12 12h8v8"/></symbol>
+    <symbol id="icon-try" viewBox="0 0 32 32"><path d="M7 25h18M10 25l2-11h8l2 11M13 14V8h6v6M14 19h4"/></symbol>
+    <symbol id="icon-build" viewBox="0 0 32 32"><path d="M5 24h22M8 24V13l8-5 8 5v11M13 24v-6h6v6"/><path d="M7 8l4 4M25 8l-4 4"/></symbol>
+    <symbol id="icon-participate" viewBox="0 0 32 32"><path d="M6 25V10h14v15M20 14h6v11M10 15h6M10 19h6"/><path d="M22 8l4 3-4 3"/></symbol>
+  </svg>
+
+  <nav class="nav" aria-label="Primary navigation">
     <div class="wrap nav-inner">
       <a class="brand" href="index.html" aria-label="Return to The Six-Year-Old Manifesto">
         <span class="brand-mark" aria-hidden="true"></span>
         <span>The Six-Year-Old Manifesto</span>
       </a>
-      <div class="nav-links">
+      <div class="nav-links nav-links-desktop">
+        <a href="#start-here">Start here</a>
+        <a href="#child-path">The child’s path</a>
         <a href="#dimensions">The measures</a>
         <a href="#evidence">Evidence</a>
         <a href="index.html">Manifesto</a>
       </div>
+      <details class="contents-menu">
+        <summary>Contents</summary>
+        <div>
+          <a href="#start-here">Start here</a>
+          <a href="#child-path">The child’s path</a>
+          <a href="#dimensions">The measures</a>
+          <a href="#pathway">The evidence pathway</a>
+          <a href="#access-gate">The first locked door</a>
+          <a href="#unknowns">What remains unknown</a>
+          <a href="#methodology">How the Test works</a>
+          <a href="index.html">Return to the Manifesto</a>
+        </div>
+      </details>
     </div>
   </nav>
 
-  <main>
+  <main id="main-content">
     <header class="test-hero">
       <div class="wrap test-hero-grid">
         <div class="test-intro">
           <div class="eyebrow">Six-Year-Old Test · Official Run 1</div>
-          <h1 id="verdict-title">The world does not pass.</h1>
+          <h1>Not yet.</h1>
           <p class="test-deck" id="verdict-summary">
-            Asking whether a child can turn the best available knowledge into a real next step.
+            A child can often get an answer. The dependable route from that answer to real-world action is still broken, uneven or unknown.
           </p>
 
           <div class="run-controls">
-            <button class="primary-button" type="button" data-run-test>Run the Test</button>
-            <a class="ghost-button" href="#methodology">See how it works</a>
+            <button class="primary-button" type="button" data-run-test>See the current result</button>
+            <a class="ghost-button" href="#methodology">How the Test works</a>
           </div>
 
           <div class="safe-run-banner" data-safe-run-banner tabindex="-1">
             <span class="safe-run-pulse" aria-hidden="true"></span>
             <div>
-              <strong>Returning the current official result</strong>
+              <strong>Showing the current official result</strong>
               <span>Evidence checked <time data-safe-date>16 Jul 2026</time>. Next refresh eligible <time data-next-date>16 Oct 2026</time>.</span>
             </div>
           </div>
         </div>
 
-        <div class="score-stage" aria-label="Measured enabling substrate score">
-          <div class="score-orbit" aria-hidden="true">
-            <span class="score-dot score-dot-a"></span>
-            <span class="score-dot score-dot-b"></span>
-            <span class="score-dot score-dot-c"></span>
-          </div>
-          <div class="score-orb" data-score-orb>
-            <div class="score-orb-inner">
-              <span class="score-label">What the world makes possible</span>
-              <strong data-overall-score>64</strong>
-              <span class="score-denominator">/ 100</span>
-            </div>
-          </div>
-          <div class="score-caption">
-            <span class="status pressure">Official result</span>
-            <p>Five parts can be estimated today. Three important parts still cannot.</p>
-          </div>
-        </div>
+        <aside class="result-note" data-score-orb aria-label="Official Run 1 result summary">
+          <div class="result-stamp">Official Run 1</div>
+          <p class="result-question">Can an ordinary child turn an answer into a real next step?</p>
+          <p class="result-verdict" id="verdict-title">The world does not pass.</p>
+          <dl class="result-facts">
+            <div><dt>Measured conditions</dt><dd><strong data-overall-score>64</strong><span>/ 100</span></dd></div>
+            <div><dt>Confidence</dt><dd>Medium</dd></div>
+            <div><dt>Still unmeasured</dt><dd>3 of 8</dd></div>
+            <div><dt>Safe route for a child</dt><dd>Not global</dd></div>
+          </dl>
+          <p class="result-caveat">The score covers five measurable or proxy areas. It is not an end-to-end capability score.</p>
+        </aside>
       </div>
     </header>
 
-    <section class="verdict-strip" aria-label="Test status">
-      <div class="wrap verdict-strip-grid">
-        <div><small>World verdict</small><strong>Fail</strong></div>
-        <div><small>Confidence / runs</small><strong>Medium · <span data-total-runs>1</span></strong></div>
-        <div><small>Still unmeasured</small><strong>3 of 8</strong></div>
-        <div><small>Safe route for a child</small><strong>Not global</strong></div>
+    <section id="start-here" class="start-here-section test-start-here">
+      <div class="wrap">
+        <div class="reading-label reveal">The two-minute result</div>
+        <div class="start-here-grid reveal">
+          <div class="start-statement"><span>01</span><h2>The answer is increasingly available.</h2><p>Networks, education and intelligent tools reach more people than before, though access and quality remain profoundly uneven.</p></div>
+          <div class="start-statement"><span>02</span><h2>The route to action is the weak point.</h2><p>Trusted adults, mentoring, workshops, laboratories, money and public institutions are not reliably connected to the answer.</p></div>
+          <div class="start-statement"><span>03</span><h2>Missing evidence prevents a pass.</h2><p>We still cannot defensibly measure practical pathways, safety and rights, or whether a child can sustain and shape real action.</p></div>
+        </div>
+        <div class="reading-routes reveal">
+          <a href="#child-path"><strong>Follow the child’s path</strong><span>The clearest view of what works and what breaks</span></a>
+          <a href="#dimensions"><strong>Explore the measures</strong><span>Eight questions, including the three honest unknowns</span></a>
+          <a href="#methodology"><strong>Inspect the method</strong><span>Fixed rules, primary sources and raw data</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="child-path" class="child-path-section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="kicker">The route from a question to agency</div><h2>An answer has to survive the journey into real life.</h2></div>
+          <p class="section-intro">The symbols and words carry the meaning. Colour only adds evidence status: available, emerging, blocked or still unknown.</p>
+        </div>
+        <ol class="child-path" aria-label="Six stages from asking a question to participating in decisions">
+          <li class="path-step reveal" data-state="available"><svg class="path-icon" aria-hidden="true"><use href="#icon-ask"></use></svg><span class="path-number">01</span><h3>Can I ask?</h3><p>Often, but not through one safe and globally consistent route.</p><strong>Available unevenly</strong></li>
+          <li class="path-step reveal" data-state="emerging"><svg class="path-icon" aria-hidden="true"><use href="#icon-understand"></use></svg><span class="path-number">02</span><h3>Can I understand?</h3><p>Language, literacy and local context still limit useful understanding.</p><strong>Emerging</strong></li>
+          <li class="path-step reveal" data-state="blocked"><svg class="path-icon" aria-hidden="true"><use href="#icon-help"></use></svg><span class="path-number">03</span><h3>Can I get help?</h3><p>The bridge to a trusted adult, mentor or public institution is not dependable.</p><strong>Blocked in many places</strong></li>
+          <li class="path-step reveal" data-state="unknown"><svg class="path-icon" aria-hidden="true"><use href="#icon-try"></use></svg><span class="path-number">04</span><h3>Can I try?</h3><p>No global benchmark yet tests whether the proposed next step is practical and achievable.</p><strong>Unknown</strong></li>
+          <li class="path-step reveal" data-state="unknown"><svg class="path-icon" aria-hidden="true"><use href="#icon-build"></use></svg><span class="path-number">05</span><h3>Can I make it real?</h3><p>Access to tools, money, workshops and sustained support is not measured end to end.</p><strong>Unknown</strong></li>
+          <li class="path-step reveal" data-state="unknown"><svg class="path-icon" aria-hidden="true"><use href="#icon-participate"></use></svg><span class="path-number">06</span><h3>Can I shape what happens?</h3><p>We cannot yet measure whether the child can influence decisions and keep a project alive.</p><strong>Unknown</strong></li>
+        </ol>
       </div>
     </section>
 
@@ -89,15 +133,15 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div>
-            <div class="kicker">What the world makes possible</div>
+            <div class="kicker">Eight questions underneath the result</div>
             <h2>Where a child can move forward, and where they get stuck.</h2>
           </div>
           <p class="section-intro">
-            The score describes the conditions around a child. It does not predict their future. Important gaps stay unmeasured, and those gaps mean the world cannot pass.
+            The measured figures describe the conditions around a child. They do not predict that child’s future. Open each question for the evidence summary.
           </p>
         </div>
-
-        <div class="dimension-orbit" data-dimensions aria-live="polite"></div>
+        <div class="dimension-orbit" data-dimensions aria-busy="true"></div>
+        <p class="visually-hidden" data-load-status role="status" aria-live="polite"></p>
       </div>
     </section>
 
@@ -105,11 +149,11 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div>
-            <div class="kicker">The route from an answer to action</div>
+            <div class="kicker">The evidence pathway</div>
             <h2>Knowing what to do is not the same as being able to do it.</h2>
           </div>
           <p class="section-intro">
-            These figures describe different groups, years and places. They sit beside one another to show the weak points. They are not one child’s journey.
+            These figures describe different groups, years and places. They sit beside one another to reveal weak points. They are not one child’s journey.
           </p>
         </div>
 
@@ -129,7 +173,7 @@
             <h2>The biggest breaks are not in the answer.</h2>
           </div>
           <p class="section-intro">
-            These findings come from the published evidence. Later runs may change the figures, while keeping the same questions and rules.
+            These findings come from the published evidence. Later runs may change the figures while keeping the same questions and rules.
           </p>
         </div>
         <div class="callout-grid" data-callouts></div>
@@ -144,12 +188,8 @@
           <p>
             A pass does not mean handing an unrestricted chatbot to a six-year-old. It means providing a safe and dependable route through a trusted adult, school, library or public service. That route is not available everywhere today.
           </p>
-          <div class="gate-verdict">
-            <span>Safe route to useful help</span>
-            <strong>Fail</strong>
-          </div>
+          <div class="gate-verdict"><span>Safe route to useful help</span><strong>Fail</strong></div>
         </article>
-
         <div class="provider-gates reveal" data-provider-gates></div>
       </div>
     </section>
@@ -187,8 +227,8 @@
           </div>
           <div class="method-links">
             <a href="docs/six-year-old-test-methodology.md">Read the methodology</a>
-            <a href="data/test/metric-registry.json">Metric registry</a>
-            <a href="data/test/evidence-ledger.json">Evidence ledger</a>
+            <a href="data/test/metric-registry.json">Download the metric registry</a>
+            <a href="data/test/evidence-ledger.json">Inspect the evidence JSON</a>
             <a href="data/test/quarterly-run.schema.json">Scheduled runner schema</a>
           </div>
         </div>
@@ -197,7 +237,7 @@
 
     <section id="evidence" class="sources-section">
       <div class="wrap">
-        <details class="reveal">
+        <details class="reveal source-disclosure">
           <summary>Evidence and source notes</summary>
           <div class="source-ledger" data-source-ledger></div>
         </details>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="The Six-Year-Old Manifesto: a public test for whether advanced intelligence expands human capability, security and freedom." />
-  <meta name="theme-color" content="#f4f0e5" />
+  <meta name="theme-color" content="#f3f0e8" />
   <meta property="og:title" content="The Six-Year-Old Manifesto" />
   <meta property="og:description" content="A public test for whether advanced intelligence expands human capability, security and freedom." />
   <meta property="og:type" content="website" />
@@ -12,28 +12,55 @@
   <title>The Six-Year-Old Manifesto</title>
   <link rel="stylesheet" href="styles/manifesto.css" />
   <link rel="stylesheet" href="styles/public-handbook.css" />
+  <link rel="stylesheet" href="styles/softening-pass.css" />
   <script src="scripts/manifesto.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to the main content</a>
   <div class="noise" aria-hidden="true"></div>
 
-  <nav class="nav">
+  <svg class="icon-library" aria-hidden="true">
+    <symbol id="icon-ask" viewBox="0 0 32 32"><path d="M5 6.5h22v15H15l-6.5 5v-5H5z"/><path d="M11 12h10M11 16h7"/></symbol>
+    <symbol id="icon-understand" viewBox="0 0 32 32"><path d="M4 7.5c5-1.5 9-.7 12 2.2v16c-3-2.8-7-3.6-12-2.1zM28 7.5c-5-1.5-9-.7-12 2.2v16c3-2.8 7-3.6 12-2.1z"/></symbol>
+    <symbol id="icon-help" viewBox="0 0 32 32"><path d="M5 25h22M8 25V8h16v17M12 21l8-9M12 12h8v8"/></symbol>
+    <symbol id="icon-try" viewBox="0 0 32 32"><path d="M7 25h18M10 25l2-11h8l2 11M13 14V8h6v6M14 19h4"/></symbol>
+    <symbol id="icon-build" viewBox="0 0 32 32"><path d="M5 24h22M8 24V13l8-5 8 5v11M13 24v-6h6v6"/><path d="M7 8l4 4M25 8l-4 4"/></symbol>
+    <symbol id="icon-participate" viewBox="0 0 32 32"><path d="M6 25V10h14v15M20 14h6v11M10 15h6M10 19h6"/><path d="M22 8l4 3-4 3"/></symbol>
+    <symbol id="icon-cost" viewBox="0 0 32 32"><path d="M6 10h20v15H6zM10 6h12v4"/><path d="M11 15h10M11 20h7"/></symbol>
+    <symbol id="icon-risk" viewBox="0 0 32 32"><path d="M16 4l12 23H4z"/><path d="M16 11v8M16 23v.5"/></symbol>
+    <symbol id="icon-share" viewBox="0 0 32 32"><path d="M8 24h16V13M12 9h12v12"/><path d="M17 5h10v10M27 5L15 17"/></symbol>
+  </svg>
+
+  <nav class="nav" aria-label="Primary navigation">
     <div class="wrap nav-inner">
       <a class="brand" href="#top" aria-label="The Six-Year-Old Manifesto home">
         <span class="brand-mark" aria-hidden="true"></span>
         <span>The Six-Year-Old Manifesto</span>
       </a>
-      <div class="nav-links">
-        <a href="#test">The test</a>
+      <div class="nav-links nav-links-desktop">
+        <a href="#start-here">Start here</a>
+        <a href="#principles">The principles</a>
         <a href="#foundry">The Foundry</a>
         <a href="#evidence">Evidence</a>
         <button class="ghost-button" data-share type="button">Share</button>
       </div>
+      <details class="contents-menu">
+        <summary>Contents</summary>
+        <div>
+          <a href="#start-here">Start here</a>
+          <a href="#principles">The principles</a>
+          <a href="#transition">The crossing</a>
+          <a href="#foundry">The Foundry</a>
+          <a href="#evidence">Evidence</a>
+          <a href="#uncertainty">What could go wrong</a>
+          <button data-share type="button">Share this page</button>
+        </div>
+      </details>
     </div>
   </nav>
 
-  <main id="top">
-    <header class="hero">
+  <main id="main-content">
+    <header class="hero" id="top">
       <div class="wrap hero-grid">
         <div>
           <div class="eyebrow">Manifesto v0.1 · July 2026</div>
@@ -42,28 +69,56 @@
             A simple question for a complicated age: does progress give every child a real chance to learn, make things, feel secure and improve the world around them?
           </p>
           <div class="hero-actions">
-            <a class="primary-button" href="test.html">Run the Test</a>
-            <a class="ghost-button" href="#evidence">See what is already real</a>
+            <a class="primary-button" href="test.html">See the current result</a>
+            <a class="ghost-button" href="#start-here">Read the two-minute version</a>
           </div>
-          <p class="test-run-status"><span></span> Official Run 1 available · research completed 16 Jul 2026 · next run eligible 16 Oct 2026</p>
+          <p class="test-run-status"><span></span> Official Run 1 · evidence checked 16 Jul 2026 · next run eligible 16 Oct 2026</p>
         </div>
 
-        <div class="clock-scene" aria-label="An imagined AI-enabled clock">
-          <div class="orbit" aria-hidden="true">
-            <span class="dot one"></span>
-            <span class="dot two"></span>
-            <span class="dot three"></span>
-          </div>
-          <div class="clock"><span class="clock-core"></span></div>
-          <div class="question-card">
+        <div class="question-scene" aria-label="A child's question beginning a path towards action">
+          <div class="question-note question-note-main">
+            <svg class="field-icon" aria-hidden="true"><use href="#icon-ask"></use></svg>
             <small>Six years old · somewhere in the world</small>
             <p>“How do I change the world?”</p>
+          </div>
+          <div class="question-thread" aria-hidden="true"></div>
+          <div class="question-note question-note-answer">
+            <small>The answer is only the beginning</small>
+            <p>Can I understand it, find help and actually try?</p>
           </div>
         </div>
       </div>
     </header>
 
-    <section id="test">
+    <section id="start-here" class="start-here-section">
+      <div class="wrap">
+        <div class="reading-label reveal">The two-minute version</div>
+        <div class="start-here-grid reveal">
+          <div class="start-statement">
+            <span>01</span>
+            <h2>Ask one human question.</h2>
+            <p>Can a child turn the best knowledge humanity has into a safe, useful and achievable next step?</p>
+          </div>
+          <div class="start-statement">
+            <span>02</span>
+            <h2>Follow the whole route.</h2>
+            <p>An answer matters only when the child can understand it, reach trusted help, use tools, make something and keep going.</p>
+          </div>
+          <div class="start-statement">
+            <span>03</span>
+            <h2>Count what changes.</h2>
+            <p>Progress passes only when it expands ordinary people’s security, capability and power to shape what happens next.</p>
+          </div>
+        </div>
+        <div class="reading-routes reveal" aria-label="Choose how deeply to explore">
+          <a href="#principles"><strong>Read the ideas</strong><span>The principles and the route from here to there</span></a>
+          <a href="test.html"><strong>See the current result</strong><span>Where the route works, breaks or remains unknown</span></a>
+          <a href="#sources"><strong>Inspect the evidence</strong><span>The sources, caveats and dated claims underneath</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="test" class="statement-break">
       <div class="wrap">
         <div class="test reveal">
           <blockquote>
@@ -88,20 +143,20 @@
           </p>
         </div>
 
-        <div class="pillars">
-          <article class="pillar reveal"><span class="pillar-num">01</span><div><h3>Help people do more</h3><p>Optimise for what people can learn, build, repair, organise and become, not merely what they can buy or scroll past.</p></div></article>
-          <article class="pillar reveal"><span class="pillar-num">02</span><div><h3>Share what progress creates</h3><p>Cheaper energy and production mean little if access is enclosed by monopoly, geography, debt or subscription.</p></div></article>
-          <article class="pillar reveal"><span class="pillar-num">03</span><div><h3>Public money should create public benefit</h3><p>Publicly funded intelligence applied to publicly funded machinery must produce publicly accessible benefit.</p></div></article>
-          <article class="pillar reveal"><span class="pillar-num">04</span><div><h3>Show the evidence</h3><p>Publish assumptions, measurements, failures and uncertainty. Update the programme when reality disagrees.</p></div></article>
-          <article class="pillar reveal"><span class="pillar-num">05</span><div><h3>Help people through change</h3><p>Income, services, taxation and bargaining power must evolve before job displacement outruns social stability.</p></div></article>
-          <article class="pillar reveal"><span class="pillar-num">06</span><div><h3>Open where safe</h3><p>Default to open science and fair access while containing weapons, dangerous biology and genuinely hazardous processes.</p></div></article>
-          <article class="pillar reveal"><span class="pillar-num">07</span><div><h3>No birthplace lottery</h3><p>A child’s country, language or family wealth must not determine whether they can use civilisation’s best tools.</p></div></article>
-          <article class="pillar reveal"><span class="pillar-num">08</span><div><h3>People choose the direction</h3><p>AI may search the possibility space. People must still choose the goals, limits, ownership and acceptable risks.</p></div></article>
-        </div>
+        <ol class="manifesto-list">
+          <li class="reveal"><span>01</span><div><h3>Help people do more</h3><p>Optimise for what people can learn, build, repair, organise and become, not merely what they can buy or scroll past.</p></div></li>
+          <li class="reveal"><span>02</span><div><h3>Share what progress creates</h3><p>Cheaper energy and production mean little if access is enclosed by monopoly, geography, debt or subscription.</p></div></li>
+          <li class="reveal"><span>03</span><div><h3>Public money should create public benefit</h3><p>Publicly funded intelligence applied to publicly funded machinery must produce publicly accessible benefit.</p></div></li>
+          <li class="reveal"><span>04</span><div><h3>Show the evidence</h3><p>Publish assumptions, measurements, failures and uncertainty. Update the programme when reality disagrees.</p></div></li>
+          <li class="reveal"><span>05</span><div><h3>Help people through change</h3><p>Income, services, taxation and bargaining power must evolve before job displacement outruns social stability.</p></div></li>
+          <li class="reveal"><span>06</span><div><h3>Open where safe</h3><p>Default to open science and fair access while containing weapons, dangerous biology and genuinely hazardous processes.</p></div></li>
+          <li class="reveal"><span>07</span><div><h3>No birthplace lottery</h3><p>A child’s country, language or family wealth must not determine whether they can use civilisation’s best tools.</p></div></li>
+          <li class="reveal"><span>08</span><div><h3>People choose the direction</h3><p>AI may search the possibility space. People must still choose the goals, limits, ownership and acceptable risks.</p></div></li>
+        </ol>
       </div>
     </section>
 
-    <section id="transition">
+    <section id="transition" class="crossing-section">
       <div class="wrap">
         <div class="section-head reveal">
           <div>
@@ -113,39 +168,27 @@
           </p>
         </div>
 
-        <div class="architecture">
-          <article class="architecture-card reveal">
+        <div class="crossing-map" aria-label="Three parts of a transition that people can safely cross">
+          <article class="crossing-stage reveal">
+            <svg class="field-icon" aria-hidden="true"><use href="#icon-cost"></use></svg>
+            <span class="crossing-number">01</span>
             <h3>Make useful things cheaper</h3>
-            <p>Drive down the physical cost of intelligence and production.</p>
-            <ul>
-              <li>Abundant clean energy and stronger grids</li>
-              <li>Efficient models, chips and memory</li>
-              <li>Cooling, conductors and heat reuse</li>
-              <li>Robotics, materials and flexible factories</li>
-              <li>Precision agriculture and circular resource flows</li>
-            </ul>
+            <p>Lower the physical cost of intelligence, energy and production.</p>
+            <details><summary>What that includes</summary><ul><li>Abundant clean energy and stronger grids</li><li>Efficient models, chips and memory</li><li>Cooling, conductors and heat reuse</li><li>Robotics, materials and flexible factories</li><li>Precision agriculture and circular resource flows</li></ul></details>
           </article>
-          <article class="architecture-card reveal">
+          <article class="crossing-stage reveal">
+            <svg class="field-icon" aria-hidden="true"><use href="#icon-risk"></use></svg>
+            <span class="crossing-number">02</span>
             <h3>Watch what could break</h3>
             <p>Track where acceleration could fracture the economy or concentrate power.</p>
-            <ul>
-              <li>Speculative overinvestment and financial contagion</li>
-              <li>Job loss arriving before cheaper essentials</li>
-              <li>Tax-base erosion and weakened public services</li>
-              <li>Ownership concentrating faster than productivity</li>
-              <li>Energy, water, mineral and grid bottlenecks</li>
-            </ul>
+            <details><summary>What that includes</summary><ul><li>Speculative overinvestment and financial contagion</li><li>Job loss arriving before cheaper essentials</li><li>Tax-base erosion and weakened public services</li><li>Ownership concentrating faster than productivity</li><li>Energy, water, mineral and grid bottlenecks</li></ul></details>
           </article>
-          <article class="architecture-card reveal">
+          <article class="crossing-stage reveal">
+            <svg class="field-icon" aria-hidden="true"><use href="#icon-share"></use></svg>
+            <span class="crossing-number">03</span>
             <h3>Make sure the gains reach people</h3>
             <p>Convert productivity into security and agency for households.</p>
-            <ul>
-              <li>Modernised benefits, including UK Universal Credit</li>
-              <li>Universal basic income or social dividends</li>
-              <li>Universal essential services</li>
-              <li>Taxation that follows capital and automated value</li>
-              <li>Public compute, open standards and fair licensing</li>
-            </ul>
+            <details><summary>What that includes</summary><ul><li>Modernised benefits, including UK Universal Credit</li><li>Universal basic income or social dividends</li><li>Universal essential services</li><li>Taxation that follows capital and automated value</li><li>Public compute, open standards and fair licensing</li></ul></details>
           </article>
         </div>
       </div>
@@ -163,7 +206,7 @@
           </p>
         </div>
 
-        <div class="foundry">
+        <div class="foundry foundry-editorial">
           <article class="foundry-copy reveal">
             <h3>Not one giant laboratory. A shared workshop for discovery.</h3>
             <p>Specialist sites would share a charter, data fabric, safety rules and experimental interface. One site explores materials. Another fabricates. Another performs destructive testing. A separate site must reproduce major results before the work is treated as real.</p>
@@ -172,6 +215,7 @@
           </article>
 
           <article class="foundry-loop reveal">
+            <div class="workshop-label">The discovery-to-deployment loop</div>
             <div class="loop-list">
               <div class="loop-item"><span>Define a public challenge and hard constraints</span></div>
               <div class="loop-item"><span>Generate hypotheses grounded in evidence</span></div>
@@ -192,7 +236,7 @@
       </div>
     </section>
 
-    <section id="evidence">
+    <section id="evidence" class="evidence-section">
       <div class="wrap">
         <div class="section-head reveal">
           <div>
@@ -202,16 +246,31 @@
           <p class="section-intro">None of these examples proves that everything will work. They show that important pieces already do. Evidence checked on 16 July 2026.</p>
         </div>
 
-        <div class="evidence-grid">
-          <article class="evidence-card reveal"><span class="status live">Working now</span><h3>Autonomous materials synthesis</h3><div class="metric">36 / 57</div><p>Berkeley Lab’s A-Lab realised 36 target compounds during 17 days of continuous autonomous operation.</p><a href="https://profiles.lbl.gov/268881-david-milsted/publications" target="_blank" rel="noreferrer">Berkeley Lab publication record ↗</a></article>
-          <article class="evidence-card reveal"><span class="status live">Working now</span><h3>AI-controlled chemistry</h3><div class="metric">Plan → run</div><p>Coscientist demonstrated an LLM-based system that could design, plan and perform complex chemistry experiments using laboratory automation.</p><a href="https://www.nature.com/articles/s41586-023-06792-0" target="_blank" rel="noreferrer">Nature, 2023 ↗</a></article>
-          <article class="evidence-card reveal"><span class="status live">Accelerating</span><h3>Hypothesis engines</h3><div class="metric">2026</div><p>Google’s multi-agent Co-Scientist generates, critiques and evolves scientific hypotheses, with ideas already being moved into experimental validation.</p><a href="https://www.nature.com/articles/s41586-026-10644-y" target="_blank" rel="noreferrer">Nature, 2026 ↗</a></article>
-          <article class="evidence-card reveal"><span class="status live">Institution forming</span><h3>National autonomous labs</h3><div class="metric">$34m</div><p>US programmes are funding AI-paired autonomous laboratories for catalyst development, while the DOE’s Genesis Mission explicitly targets AI-driven labs and advanced manufacturing.</p><a href="https://arpa-e.energy.gov/news-and-events/news-and-insights/us-department-energy-announces-34-million-pair-artificial-intelligence-autonomous-labs-accelerate-catalyst-development-0" target="_blank" rel="noreferrer">US Department of Energy, 2026 ↗</a></article>
-          <article class="evidence-card reveal"><span class="status pressure">Constraint rising</span><h3>Data-centre electricity</h3><div class="metric">945 TWh</div><p>The IEA projects global data-centre electricity use could more than double to roughly 945 TWh by 2030.</p><a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai" target="_blank" rel="noreferrer">International Energy Agency ↗</a></article>
-          <article class="evidence-card reveal"><span class="status live">Scientific milestone</span><h3>Fusion ignition repeated</h3><div class="metric">11×</div><p>LLNL reported an eleventh NIF ignition in June 2026. This is a research milestone, not yet commercial power.</p><a href="https://lasers.llnl.gov/science/achieving-fusion-ignition" target="_blank" rel="noreferrer">Lawrence Livermore National Laboratory ↗</a></article>
-          <article class="evidence-card reveal"><span class="status pressure">Social transition</span><h3>Work will change</h3><div class="metric">≈40%</div><p>The IMF estimates AI may affect almost 40% of jobs globally, complementing some work while reducing demand for other roles and potentially worsening inequality.</p><a href="https://www.imf.org/en/blogs/articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity" target="_blank" rel="noreferrer">International Monetary Fund ↗</a></article>
-          <article class="evidence-card reveal"><span class="status risk">Gap remains</span><h3>Factories are not yet general</h3><div class="metric">Islands</div><p>Labs can close narrow discovery loops, but no public institution yet integrates general hypothesis generation, materials, machine design, scale-up, independent replication and open deployment.</p><a href="https://www.energy.gov/undersecretaryforscience/genesis-mission/achieving-ai-driven-autonomous-laboratories" target="_blank" rel="noreferrer">DOE autonomous laboratory programme ↗</a></article>
-          <article class="evidence-card reveal"><span class="status live">Manufacturing shift</span><h3>Design-to-production loop</h3><div class="metric">Roadmap</div><p>NIST’s 2026 smart-manufacturing roadmap tracks AI across autonomous systems, additive manufacturing, digital twins, robotics, logistics and sustainable production.</p><a href="https://www.nist.gov/publications/2026-roadmap-artificial-intelligence-and-machine-learning-smart-manufacturing" target="_blank" rel="noreferrer">NIST, 2026 ↗</a></article>
+        <div class="evidence-shelves">
+          <section class="evidence-shelf" aria-labelledby="working-now-heading">
+            <div class="shelf-heading reveal"><span class="status live">Available or demonstrated</span><h3 id="working-now-heading">Things we can already point to</h3></div>
+            <div class="evidence-list">
+              <article class="evidence-card reveal"><h3>Autonomous materials synthesis</h3><div class="metric">36 / 57</div><p>Berkeley Lab’s A-Lab realised 36 target compounds during 17 days of continuous autonomous operation.</p><a href="https://profiles.lbl.gov/268881-david-milsted/publications" target="_blank" rel="noreferrer">Berkeley Lab publication record ↗</a></article>
+              <article class="evidence-card reveal"><h3>AI-controlled chemistry</h3><div class="metric">Plan → run</div><p>Coscientist demonstrated an LLM-based system that could design, plan and perform complex chemistry experiments using laboratory automation.</p><a href="https://www.nature.com/articles/s41586-023-06792-0" target="_blank" rel="noreferrer">Nature, 2023 ↗</a></article>
+              <article class="evidence-card reveal"><h3>Hypothesis engines</h3><div class="metric">2026</div><p>Google’s multi-agent Co-Scientist generates, critiques and evolves scientific hypotheses, with ideas already being moved into experimental validation.</p><a href="https://www.nature.com/articles/s41586-026-10644-y" target="_blank" rel="noreferrer">Nature, 2026 ↗</a></article>
+              <article class="evidence-card reveal"><h3>National autonomous labs</h3><div class="metric">$34m</div><p>US programmes are funding AI-paired autonomous laboratories for catalyst development, while the DOE’s Genesis Mission explicitly targets AI-driven labs and advanced manufacturing.</p><a href="https://arpa-e.energy.gov/news-and-events/news-and-insights/us-department-energy-announces-34-million-pair-artificial-intelligence-autonomous-labs-accelerate-catalyst-development-0" target="_blank" rel="noreferrer">US Department of Energy, 2026 ↗</a></article>
+              <article class="evidence-card reveal"><h3>Fusion ignition repeated</h3><div class="metric">11×</div><p>LLNL reported an eleventh NIF ignition in June 2026. This is a research milestone, not yet commercial power.</p><a href="https://lasers.llnl.gov/science/achieving-fusion-ignition" target="_blank" rel="noreferrer">Lawrence Livermore National Laboratory ↗</a></article>
+              <article class="evidence-card reveal"><h3>Design-to-production loop</h3><div class="metric">Roadmap</div><p>NIST’s 2026 smart-manufacturing roadmap tracks AI across autonomous systems, additive manufacturing, digital twins, robotics, logistics and sustainable production.</p><a href="https://www.nist.gov/publications/2026-roadmap-artificial-intelligence-and-machine-learning-smart-manufacturing" target="_blank" rel="noreferrer">NIST, 2026 ↗</a></article>
+            </div>
+          </section>
+
+          <section class="evidence-shelf" aria-labelledby="pressure-heading">
+            <div class="shelf-heading reveal"><span class="status pressure">Pressure and transition</span><h3 id="pressure-heading">Things that could narrow the path</h3></div>
+            <div class="evidence-list evidence-list-short">
+              <article class="evidence-card reveal"><h3>Data-centre electricity</h3><div class="metric">945 TWh</div><p>The IEA projects global data-centre electricity use could more than double to roughly 945 TWh by 2030.</p><a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai" target="_blank" rel="noreferrer">International Energy Agency ↗</a></article>
+              <article class="evidence-card reveal"><h3>Work will change</h3><div class="metric">≈40%</div><p>The IMF estimates AI may affect almost 40% of jobs globally, complementing some work while reducing demand for other roles and potentially worsening inequality.</p><a href="https://www.imf.org/en/blogs/articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity" target="_blank" rel="noreferrer">International Monetary Fund ↗</a></article>
+            </div>
+          </section>
+
+          <section class="evidence-shelf" aria-labelledby="gap-heading">
+            <div class="shelf-heading reveal"><span class="status risk">Blocked or missing</span><h3 id="gap-heading">The important machine that does not exist yet</h3></div>
+            <article class="evidence-gap reveal"><div class="metric">Islands</div><div><h3>Factories are not yet general</h3><p>Labs can close narrow discovery loops, but no public institution yet integrates general hypothesis generation, materials, machine design, scale-up, independent replication and open deployment.</p><a href="https://www.energy.gov/undersecretaryforscience/genesis-mission/achieving-ai-driven-autonomous-laboratories" target="_blank" rel="noreferrer">DOE autonomous laboratory programme ↗</a></div></article>
+          </section>
         </div>
       </div>
     </section>
@@ -226,7 +285,7 @@
           <p class="section-intro">A manifesto that cannot be falsified is just branding in a lab coat. We track both the failure modes and the developments that could neutralise them.</p>
         </div>
 
-        <div class="risks">
+        <div class="risks risk-columns">
           <article class="risk-list reveal">
             <h3>Reasons this could go badly</h3>
             <div class="risk-row"><b>01</b><p>Compute investment outruns useful revenue and triggers financial contagion.</p></div>
@@ -249,20 +308,20 @@
 
     <section id="measurement">
       <div class="wrap">
-        <div class="scoreboard reveal">
+        <div class="scoreboard reveal question-scoreboard">
           <div class="kicker">How we keep ourselves honest</div>
           <h3>Measure what changes for people.</h3>
           <p>Every claim should connect to something we can inspect. These questions guide the Test without pretending that missing evidence is a number.</p>
-          <div class="score-grid">
-            <div class="score"><small>Can people do more?</small><span>Can ordinary people solve more meaningful problems?</span></div>
-            <div class="score"><small>Is everyday life safer?</small><span>Are housing, food, healthcare, energy and income becoming more dependable?</span></div>
-            <div class="score"><small>Who gets to use the tools?</small><span>Who can use the best tools, compute, education and manufacturing?</span></div>
-            <div class="score"><small>Who receives the gains?</small><span>Where do productivity gains, ownership and bargaining power land?</span></div>
-            <div class="score"><small>Do we waste less?</small><span>Useful output per joule, litre, kilogram, hectare and hour.</span></div>
-            <div class="score"><small>Can good ideas become real?</small><span>Time from hypothesis to replication and deployable production.</span></div>
-            <div class="score"><small>Can systems survive shocks?</small><span>Can systems withstand shocks without sacrificing the least powerful?</span></div>
-            <div class="score"><small>Can people shape decisions?</small><span>Can the six-year-old participate, create, question and choose?</span></div>
-          </div>
+          <dl class="question-list">
+            <div><dt>Can people do more?</dt><dd>Can ordinary people solve more meaningful problems?</dd></div>
+            <div><dt>Is everyday life safer?</dt><dd>Are housing, food, healthcare, energy and income becoming more dependable?</dd></div>
+            <div><dt>Who gets to use the tools?</dt><dd>Who can use the best tools, compute, education and manufacturing?</dd></div>
+            <div><dt>Who receives the gains?</dt><dd>Where do productivity gains, ownership and bargaining power land?</dd></div>
+            <div><dt>Do we waste less?</dt><dd>Useful output per joule, litre, kilogram, hectare and hour.</dd></div>
+            <div><dt>Can good ideas become real?</dt><dd>Time from hypothesis to replication and deployable production.</dd></div>
+            <div><dt>Can systems survive shocks?</dt><dd>Can systems withstand shocks without sacrificing the least powerful?</dd></div>
+            <div><dt>Can people shape decisions?</dt><dd>Can the six-year-old participate, create, question and choose?</dd></div>
+          </dl>
         </div>
       </div>
     </section>
@@ -281,7 +340,7 @@
 
     <section id="sources" class="sources-section">
       <div class="wrap">
-        <details class="reveal">
+        <details class="reveal source-disclosure">
           <summary>Sources and evidence notes</summary>
           <div class="sources">
             <a href="https://profiles.lbl.gov/268881-david-milsted/publications" target="_blank" rel="noreferrer">Berkeley Lab: A-Lab autonomous synthesis record</a>

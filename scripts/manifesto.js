@@ -45,6 +45,16 @@ async function sharePage() {
   }
 }
 
+function setupContentsMenus() {
+  document.querySelectorAll('.contents-menu').forEach((menu) => {
+    menu.querySelectorAll('a, button').forEach((control) => {
+      control.addEventListener('click', () => menu.removeAttribute('open'));
+    });
+  });
+}
+
 document.querySelectorAll('[data-share]').forEach((button) => {
   button.addEventListener('click', sharePage);
 });
+
+setupContentsMenus();
