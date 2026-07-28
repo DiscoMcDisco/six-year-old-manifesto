@@ -204,6 +204,14 @@ function setupShare() {
   });
 }
 
+function setupContentsMenus() {
+  document.querySelectorAll('.contents-menu').forEach((menu) => {
+    menu.querySelectorAll('a, button').forEach((control) => {
+      control.addEventListener('click', () => menu.removeAttribute('open'));
+    });
+  });
+}
+
 async function initialiseTest() {
   try {
     const [resultResponse, evidenceResponse] = await Promise.all([
@@ -234,6 +242,7 @@ async function initialiseTest() {
     renderSources(evidence.entries);
     setupRunButton(result);
     setupShare();
+    setupContentsMenus();
     activateRevealObserver();
   } catch (error) {
     console.error(error);
@@ -247,6 +256,7 @@ async function initialiseTest() {
     }
     const status = document.querySelector('[data-load-status]');
     if (status) status.textContent = 'The Test data could not be loaded.';
+    setupContentsMenus();
     activateRevealObserver();
   }
 }
