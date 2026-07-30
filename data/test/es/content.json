@@ -1,10 +1,10 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "locale": "es",
   "translationStatus": "machine-assisted-editorial-draft",
   "editorialNote": "Spanish pilot translation for branch review. Native-speaker editorial review is required before production publication.",
   "verdict": {
-    "headline": "El mundo no supera la prueba."
+    "headline": "El mundo todavía no supera la prueba."
   },
   "dimensions": {
     "digital_access": {
@@ -43,9 +43,9 @@
       "summary": "Existe un marco, pero no una medida global comparable de su aplicación."
     },
     "agency_and_participation": {
-      "label": "Capacidad de decisión y participación",
+      "label": "Capacidad de actuar y participar",
       "question": "¿Puedo continuar e influir en las decisiones?",
-      "summary": "Ningún indicador global defendible mide hoy si una niña o un niño puede convertir una idea en una acción sostenida."
+      "summary": "Ningún indicador global defendible mide hoy si una persona de seis años puede convertir una idea en una acción sostenida."
     }
   },
   "callouts": {
@@ -59,7 +59,7 @@
     },
     "physical_bottleneck": {
       "title": "El mundo físico sigue siendo el cuello de botella.",
-      "body": "La electricidad llega al 92 % de la población y la cocina limpia a cerca del 75 %, mientras que solo el 23,9 % de niñas y niños recibe una prestación monetaria infantil o familiar."
+      "body": "La electricidad llega al 92 % de la población y la cocina limpia a cerca del 75 %, mientras que solo el 23,9 % de la infancia recibe una prestación monetaria infantil o familiar."
     },
     "institution_gap": {
       "title": "Medimos si la escuela tiene internet. No medimos adónde lleva la idea después.",
@@ -93,15 +93,15 @@
     },
     "child_cash_benefit_coverage": {
       "label": "Recibe una prestación monetaria infantil o familiar",
-      "population": "niñas, niños y jóvenes de 0 a 18 años"
+      "population": "personas de 0 a 18 años"
     }
   },
   "pathwayWarning": "Estos puntos de control utilizan poblaciones, años y denominadores distintos. No representan una única cohorte y no deben multiplicarse como si fueran un embudo de abandono.",
   "knownUnknowns": [
     "Si una IA puede producir planes de acción seguros, locales, adecuados para la edad y alcanzables en distintas regiones e idiomas.",
     "Si las salvaguardas de IA centradas en la infancia se aplican de forma coherente en los sistemas desplegados.",
-    "Si una niña o un niño puede llegar a una persona adulta de confianza, una mentoría, un taller, un laboratorio, un servicio público o una organización cívica.",
-    "Si una niña o un niño puede influir en las decisiones y sostener un proyecto real después de la primera acción."
+    "Si una persona de seis años puede llegar a una persona adulta de confianza, una mentoría, un taller, un laboratorio, un servicio público o una organización cívica.",
+    "Si puede influir en las decisiones y sostener un proyecto real después de la primera acción."
   ],
   "evidence": {
     "internet_use_global": {
@@ -126,7 +126,7 @@
       "caveat": "La estimación se reutiliza ampliamente y se actualizó en orientaciones de 2025, pero el periodo de observación mundial subyacente no se presenta como un único año actual."
     },
     "education_participation": {
-      "claim": "La tasa mundial de personas fuera de la escuela rondaba el 17 % en 2024, equivalente a 273 millones de niñas, niños y jóvenes."
+      "claim": "La tasa mundial de personas fuera de la escuela rondaba el 17 % en 2024, equivalente a 273 millones de personas en edad escolar."
     },
     "primary_completion_on_time": {
       "claim": "El 88 % completó la educación primaria a tiempo en 2024."
