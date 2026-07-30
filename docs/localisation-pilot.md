@@ -26,6 +26,8 @@ This is intentionally not the final scaling model. A third or fourth language wo
 
 Runtime-only translation is not preferred for the final site because it can flash the wrong language, weakens no-JavaScript behaviour and makes translated search metadata less dependable.
 
+The second preview pass applies a small runtime editorial overlay to the Spanish pages so naming and public-language decisions can be reviewed without rewriting the pilot architecture. Accepted wording must be baked into generated static output before production.
+
 ### Canonical facts, translated narrative
 
 The Test continues to load the canonical files:
@@ -48,26 +50,103 @@ Spanish-specific scripts localise:
 - decimal punctuation through `Intl.NumberFormat`
 - confidence and evidence-state labels
 - dynamically rendered Test content
+- the second-pass formal and compact naming model
 
 ### Routes and assets
 
 All Spanish page links and assets use root-relative paths. This is required because Vercel has `cleanUrls` enabled: a relative link such as `test.html` can resolve differently when the visible URL is `/es` rather than `/es/`.
 
-## Translation decisions requiring review
+## Editorial model accepted for the second preview
 
-### Project name
+### Full semantic title
 
-The pilot uses **El Manifiesto de los Seis Años** and **La Prueba de los Seis Años**.
+The formal Spanish title is:
 
-Spanish has no equally compact noun phrase for “six-year-old”. More literal alternatives are accurate but clumsy, while the selected wording is elegant but can also sound as though the manifesto itself is six years old. A native editorial reviewer should decide whether the brand remains in English, uses this transcreation, or adopts a longer precise form.
+**El manifiesto desde la mirada de una niña o un niño de seis años**
+
+The formal Test title is:
+
+**La prueba desde la perspectiva de una niña o un niño de seis años**
+
+These longer forms preserve the intended camera angle. The child is not presented as the author of the manifesto; the experience of a person aged six is the viewpoint through which progress is judged.
+
+### Compact interface names
+
+Long semantic titles must not be repeated in every control. Approved compact labels are:
+
+- **El Manifiesto**
+- **La Prueba**
+
+The full title belongs in the opening frame, metadata, share text and formal references. Navigation, buttons and footers use compact names.
+
+This becomes a reusable localisation rule: each locale may define a formal semantic title and a shorter approved interface name.
+
+### Public run language
+
+Internal data may continue to use `runNumber` and `Official Run 1`. Public Spanish copy uses:
+
+**Primera evaluación oficial**
+
+The result is phrased as:
+
+**El mundo todavía no supera la prueba.**
+
+`Todavía` is intentional. It preserves the dated, revisable nature of the Test and avoids presenting the result as permanent.
+
+### The child’s route
+
+**El camino infantil** is rejected because it can imply a childish or child-designed route.
+
+The compact navigation label is:
+
+**De la pregunta a la acción**
+
+Longer explanatory headings may use:
+
+**El recorrido desde una pregunta hasta la capacidad de actuar**
 
 ### Common Foundry
 
-The pilot translates “Common Foundry” as **Forja Común**. “Fundición Común” is more literal but narrower and more industrial; “Forja Común” better preserves the civic workshop metaphor. This is a meaning decision, not a mechanical translation.
+The pilot translates “Common Foundry” as **Forja Común**. “Fundición Común” is more literal but narrower and more industrial; “Forja Común” better preserves the civic workshop metaphor.
+
+At first use, the copy expands the term as:
+
+**La Forja Común, una red pública y compartida para el descubrimiento**
+
+Later references may use **la Forja**.
 
 ### Inclusive references to children
 
-The copy generally uses “una niña o un niño” where the person matters and shorter neutral constructions where repetition would make the prose bureaucratic. This should be reviewed for the preferred Spanish register and audience.
+Use the full phrase **una niña o un niño de seis años** where the viewpoint is introduced or needs emphasis.
+
+Elsewhere, prefer natural variation:
+
+- omit the subject where Spanish allows it
+- use **una persona de seis años** when referring to one person
+- use **la infancia** when discussing children collectively
+- repeat **una niña o un niño** only where it improves meaning
+
+Inclusive wording must not make every sentence sound contractual.
+
+### Spanish register
+
+The target is neutral international Spanish rather than Spain-only or Latin-America-only copy.
+
+`<html lang="es">` remains the canonical language declaration. Open Graph requires a territory-qualified locale, so the appropriate production value remains an explicit release decision rather than evidence that the prose should adopt one regional register.
+
+### Concept glossary
+
+The Spanish glossary begins with:
+
+| English concept | Preferred Spanish treatment |
+| --- | --- |
+| capability | capacidad |
+| agency | capacidad de actuar or capacidad de decisión, according to context |
+| evidence | evidencia in technical contexts; datos y fuentes where clearer for the public |
+| Test | La Prueba for the named system; evaluación for an individual run |
+| Common Foundry | Forja Común; la Forja after first use |
+
+The glossary is a semantic contract. Translators may adapt grammar and rhythm, but these distinctions should not drift silently between pages.
 
 ### Source titles
 
@@ -80,11 +159,13 @@ Official publication titles remain in their source language on the Test ledger a
 3. Clean URLs make ordinary relative links unsafe inside locale folders. Root-relative paths are the dependable rule.
 4. Spanish expands headings and button labels. Overflow wrapping and hyphenation need explicit support, followed by real-device review.
 5. Spanish dates, decimal commas and percentage spacing need locale-aware formatting rather than string replacement.
-6. The project name and “Common Foundry” require editorial transcreation.
+6. Project names and programme concepts require editorial transcreation.
 7. Social metadata, skip links, navigation labels, `aria-label` values and live-region messages are part of the translation surface.
 8. A translated page can become stale even when the canonical evidence updates correctly. Automated coverage checks are necessary, but they cannot detect semantically outdated prose on their own.
 9. Raw methodology and JSON downloads remain English. The interface should state this honestly until those documents are localised.
 10. Relative `hreflang` links are suitable for a branch preview, but production should emit absolute canonical and alternate URLs once the production hostname and route policy are confirmed.
+11. Formal titles, compact UI labels and internal identifiers are three different language surfaces and should be modelled separately.
+12. A grammatically inclusive phrase can become repetitive enough to damage tone. Localisation requires controlled variation, not blind consistency.
 
 ## Automated checks
 
@@ -104,17 +185,19 @@ The check verifies:
 - removed canonical IDs do not leave stale Spanish content
 - translated known-unknown counts remain aligned
 - essential runtime messages are present in Spanish
+- the accepted formal and compact names are present
+- rejected first-pass public labels do not remain in the Spanish runtime
 
 The script deliberately does not claim translation quality. It catches wiring and coverage failures, not awkward prose.
 
 ## Review sequence
 
 1. Desktop visual pass on `/es/` and `/es/test`.
-2. Physical iPhone pass, including the navigation, language control, disclosures, long headings and share buttons.
+2. Physical iPhone pass, including the expanded opening titles, navigation, language control, disclosures and share buttons.
 3. Keyboard and screen-reader smoke test.
 4. Native Spanish editorial review for meaning, register, terminology and rhythm.
 5. Compare every translated evidence claim with its canonical source field.
-6. Decide final treatment of the project name and Forja Común.
+6. Confirm the formal title, compact names, Primera evaluación oficial and Forja Común treatment.
 7. Decide whether the next implementation introduces generated static pages before adding the third language.
 8. Add Spanish discovery to the English pages only after the Spanish experience is approved.
 9. Replace relative alternate links with absolute production URLs.
