@@ -5,6 +5,8 @@ const DATA_PATHS = {
 };
 
 const LOCALE = 'es';
+const FORMAL_MANIFESTO_TITLE = 'El manifiesto desde la mirada de una niña o un niño de seis años';
+const FORMAL_TEST_TITLE = 'La prueba desde la perspectiva de una niña o un niño de seis años';
 
 const formatDate = (isoDate) => new Intl.DateTimeFormat(LOCALE, {
   day: '2-digit',
@@ -20,6 +22,79 @@ const escapeHtml = (value = '') => String(value)
   .replaceAll('>', '&gt;')
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&#039;');
+
+function setMetaContent(selector, content) {
+  const element = document.querySelector(selector);
+  if (element) element.setAttribute('content', content);
+}
+
+function replaceExactText(selector, from, to) {
+  document.querySelectorAll(selector).forEach((element) => {
+    if (element.textContent.trim() === from) element.textContent = to;
+  });
+}
+
+function applyTestEditorialPass() {
+  document.title = `Evaluación actual · ${FORMAL_MANIFESTO_TITLE}`;
+  setMetaContent('meta[name="description"]', `${FORMAL_TEST_TITLE}: primera evaluación oficial sobre si el mundo puede convertir una respuesta en capacidad real para una persona de seis años.`);
+  setMetaContent('meta[property="og:title"]', `${FORMAL_TEST_TITLE} · Primera evaluación oficial`);
+  setMetaContent('meta[property="og:description"]', 'Una auditoría fechada y respaldada por evidencia, contemplada desde la experiencia de una persona de seis años.');
+
+  const brand = document.querySelector('.brand');
+  if (brand) {
+    brand.setAttribute('aria-label', 'Volver a El Manifiesto');
+    const label = brand.querySelector('span:last-child');
+    if (label) label.textContent = 'El Manifiesto';
+  }
+
+  replaceExactText('.nav a, .contents-menu a', 'El camino infantil', 'De la pregunta a la acción');
+
+  const eyebrow = document.querySelector('.test-intro .eyebrow');
+  if (eyebrow) eyebrow.textContent = `${FORMAL_TEST_TITLE} · Primera evaluación oficial`;
+
+  const deck = document.querySelector('.test-deck');
+  if (deck) {
+    deck.textContent = 'Una persona de seis años suele poder obtener una respuesta. El camino fiable desde esa respuesta hasta la acción en el mundo real sigue roto, es desigual o se desconoce.';
+  }
+
+  const runButton = document.querySelector('[data-run-test]');
+  if (runButton) runButton.textContent = 'Ver la evaluación actual';
+
+  const bannerTitle = document.querySelector('[data-safe-run-banner] strong');
+  if (bannerTitle) bannerTitle.textContent = 'Mostrando la evaluación oficial actual';
+
+  const resultNote = document.querySelector('[data-score-orb]');
+  if (resultNote) resultNote.setAttribute('aria-label', 'Resumen de la primera evaluación oficial');
+
+  const resultStamp = document.querySelector('.result-stamp');
+  if (resultStamp) resultStamp.textContent = 'Primera evaluación oficial';
+
+  const resultQuestion = document.querySelector('.result-question');
+  if (resultQuestion) resultQuestion.textContent = '¿Puede una persona de seis años convertir una respuesta en un siguiente paso real?';
+
+  const readingLabel = document.querySelector('.test-start-here .reading-label');
+  if (readingLabel) readingLabel.textContent = 'La evaluación en dos minutos';
+
+  const pathway = document.querySelector('#child-path');
+  if (pathway) {
+    pathway.setAttribute('aria-label', 'Seis etapas desde una pregunta hasta la participación en las decisiones');
+  }
+
+  const gateVerdict = document.querySelector('.gate-verdict strong');
+  if (gateVerdict) gateVerdict.textContent = 'No disponible globalmente';
+
+  const calloutKicker = document.querySelector('#callouts .kicker');
+  if (calloutKicker) calloutKicker.textContent = 'Lo que encontró la primera evaluación';
+
+  const ctaKicker = document.querySelector('.cta .kicker');
+  if (ctaKicker) ctaKicker.textContent = 'Primera evaluación oficial';
+
+  const toast = document.querySelector('[data-run-toast]');
+  if (toast) toast.textContent = 'Evaluación oficial actual cargada.';
+
+  const footerSpans = document.querySelectorAll('footer .footer-grid span');
+  if (footerSpans[0]) footerSpans[0].textContent = 'La Prueba · Primera evaluación oficial · 16 de julio de 2026';
+}
 
 const confidenceLabel = (value) => {
   const labels = {
@@ -68,7 +143,7 @@ function renderDimensions(dimensions, localeContent) {
 
   container.setAttribute('aria-busy', 'false');
   const status = document.querySelector('[data-load-status]');
-  if (status) status.textContent = `Resultado oficial 1 cargado. Hay ${dimensions.length} medidas disponibles para explorar.`;
+  if (status) status.textContent = `Primera evaluación oficial cargada. Hay ${dimensions.length} medidas disponibles para explorar.`;
 }
 
 function renderCheckpoints(checkpoints, localeContent) {
@@ -188,7 +263,7 @@ function setupRunButton(result) {
   button.addEventListener('click', () => {
     banner.classList.add('active');
     banner.focus({ preventScroll: true });
-    toast.textContent = `Resultado oficial actual · evidencia comprobada el ${formatDate(result.safeResearchCompleted)}`;
+    toast.textContent = `Evaluación oficial actual · evidencia comprobada el ${formatDate(result.safeResearchCompleted)}`;
     toast.classList.add('visible');
     window.setTimeout(() => toast.classList.remove('visible'), 2200);
     window.setTimeout(() => banner.classList.remove('active'), 1800);
@@ -200,8 +275,8 @@ function setupShare() {
   document.querySelectorAll('[data-share]').forEach((button) => {
     button.addEventListener('click', async () => {
       const shareData = {
-        title: 'La Prueba de los Seis Años · Resultado oficial 1',
-        text: '¿Puede el mundo actual convertir la inteligencia avanzada en capacidad real para una niña o un niño corriente?',
+        title: `${FORMAL_TEST_TITLE} · Primera evaluación oficial`,
+        text: '¿Puede el mundo actual convertir una respuesta en capacidad real para una persona de seis años?',
         url: window.location.href
       };
 
@@ -250,7 +325,7 @@ async function initialiseTest() {
     ]);
 
     document.querySelector('[data-overall-score]').textContent = formatNumber(result.measuredSubstrate.score);
-    document.querySelector('#verdict-title').textContent = localeContent.verdict.headline;
+    document.querySelector('#verdict-title').textContent = 'El mundo todavía no supera la prueba.';
     document.querySelector('[data-safe-date]').textContent = formatDate(result.safeResearchCompleted);
     document.querySelector('[data-next-date]').textContent = formatDate(result.nextRefreshEligible);
     document.querySelector('[data-pathway-warning]').textContent = localeContent.pathwayWarning;
@@ -282,4 +357,5 @@ async function initialiseTest() {
   }
 }
 
+applyTestEditorialPass();
 initialiseTest();
