@@ -1,3 +1,42 @@
+const FORMAL_MANIFESTO_TITLE = 'El manifiesto desde la mirada de una niña o un niño de seis años';
+
+function setMetaContent(selector, content) {
+  const element = document.querySelector(selector);
+  if (element) element.setAttribute('content', content);
+}
+
+function applyManifestoEditorialPass() {
+  document.title = FORMAL_MANIFESTO_TITLE;
+  setMetaContent('meta[name="description"]', `${FORMAL_MANIFESTO_TITLE}: una prueba pública para saber si la inteligencia avanzada amplía la capacidad, la seguridad y la libertad humanas.`);
+  setMetaContent('meta[property="og:title"]', FORMAL_MANIFESTO_TITLE);
+  setMetaContent('meta[property="og:description"]', 'Una prueba pública que contempla el progreso desde la experiencia de una persona de seis años.');
+
+  const brand = document.querySelector('.brand');
+  if (brand) {
+    brand.setAttribute('aria-label', 'Inicio de El Manifiesto');
+    const label = brand.querySelector('span:last-child');
+    if (label) label.textContent = 'El Manifiesto';
+  }
+
+  const eyebrow = document.querySelector('.hero .eyebrow');
+  if (eyebrow) eyebrow.textContent = `${FORMAL_MANIFESTO_TITLE} · v0.1 · julio de 2026`;
+
+  const runStatus = document.querySelector('.test-run-status');
+  if (runStatus) {
+    const marker = runStatus.querySelector('span');
+    runStatus.textContent = ' Primera evaluación oficial · evidencia comprobada el 16 jul 2026 · próxima evaluación posible el 16 oct 2026';
+    if (marker) runStatus.prepend(marker);
+  }
+
+  const foundryIntro = document.querySelector('#foundry .section-intro');
+  if (foundryIntro) {
+    foundryIntro.textContent = 'La Forja Común, una red pública y compartida para el descubrimiento, conectaría a científicas, científicos, laboratorios automatizados y talleres para trabajar en problemas públicos y publicar lo aprendido para que cualquiera pudiera utilizarlo.';
+  }
+
+  const footerTitle = document.querySelector('footer .footer-grid span:first-child');
+  if (footerTitle) footerTitle.textContent = 'El Manifiesto · v0.1 · 16 de julio de 2026';
+}
+
 const revealElements = document.querySelectorAll('.reveal');
 
 if ('IntersectionObserver' in window) {
@@ -16,8 +55,8 @@ if ('IntersectionObserver' in window) {
 
 async function sharePage() {
   const shareData = {
-    title: 'El Manifiesto de los Seis Años',
-    text: 'Una prueba pública para saber si la inteligencia avanzada amplía la capacidad, la seguridad y la libertad humanas.',
+    title: FORMAL_MANIFESTO_TITLE,
+    text: 'Una prueba pública que contempla el progreso desde la experiencia de una persona de seis años.',
     url: window.location.href
   };
 
@@ -52,6 +91,8 @@ function setupContentsMenus() {
     });
   });
 }
+
+applyManifestoEditorialPass();
 
 document.querySelectorAll('[data-share]').forEach((button) => {
   button.addEventListener('click', sharePage);
