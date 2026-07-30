@@ -37,6 +37,8 @@ if (process.exitCode) process.exit(process.exitCode);
 
 const manifestoHtml = readText('es/index.html');
 const testHtml = readText('es/test.html');
+const manifestoRuntime = readText('scripts/manifesto-es.js');
+const testRuntime = readText('scripts/test-es.js');
 const result = readJson('data/test/current-result.json');
 const evidence = readJson('data/test/evidence-ledger.json');
 const locale = readJson('data/test/es/content.json');
@@ -112,14 +114,34 @@ if (locale.knownUnknowns.length !== result.knownUnknowns.length) {
 const requiredSpanishRuntimeStrings = [
   'Enlace copiado',
   'Copia este enlace:',
-  'No se pudieron cargar los datos de la Prueba.'
+  'No se pudieron cargar los datos de la Prueba.',
+  'El manifiesto desde la mirada de una niña o un niño de seis años',
+  'La prueba desde la perspectiva de una niña o un niño de seis años',
+  'Primera evaluación oficial',
+  'De la pregunta a la acción',
+  'El Manifiesto'
 ];
 
-const runtimeCode = `${readText('scripts/manifesto-es.js')}\n${readText('scripts/test-es.js')}`;
+const runtimeCode = `${manifestoRuntime}\n${testRuntime}`;
 for (const text of requiredSpanishRuntimeStrings) {
   if (!runtimeCode.includes(text)) fail(`Spanish runtime string is missing: ${text}`);
 }
 
+const rejectedRuntimeStrings = [
+  'El Manifiesto de los Seis Años',
+  'La Prueba de los Seis Años · Resultado oficial 1',
+  'Resultado oficial 1 cargado',
+  'El camino infantil'
+];
+
+for (const text of rejectedRuntimeStrings) {
+  if (runtimeCode.includes(text)) fail(`Rejected first-pass wording remains in Spanish runtime: ${text}`);
+}
+
+if (locale.verdict.headline !== 'El mundo todavía no supera la prueba.') {
+  fail('Spanish verdict must preserve the dated and revisable “todavía” wording');
+}
+
 if (!process.exitCode) {
-  pass('Spanish localisation pilot passed all structural checks');
+  pass('Spanish localisation pilot passed all structural and editorial checks');
 }
