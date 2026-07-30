@@ -1,0 +1,65 @@
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  padding: 0.25rem;
+  border: 1px solid var(--line, rgba(24, 24, 24, 0.18));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--paper, #f3f0e8) 92%, transparent);
+  font-size: 0.82rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.language-switcher a,
+.language-switcher span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.15rem;
+  padding: 0 0.7rem;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.language-switcher a {
+  color: inherit;
+}
+
+.language-switcher a:hover,
+.language-switcher a:focus-visible {
+  background: rgba(24, 24, 24, 0.07);
+}
+
+.language-switcher [aria-current="page"] {
+  background: var(--ink, #181818);
+  color: var(--paper, #f3f0e8);
+}
+
+.locale-note {
+  max-width: 70ch;
+  margin: 1rem auto 0;
+  padding: 0.8rem 1rem;
+  border-inline-start: 3px solid currentColor;
+  font-size: 0.85rem;
+  color: var(--dim, #57534c);
+}
+
+html[lang="es"] :is(h1, h2, h3, h4, a, button, summary, dt, dd, p, span) {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+html[dir="rtl"] .language-switcher {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 860px) {
+  .nav-inner {
+    gap: 0.65rem;
+  }
+
+  .language-switcher {
+    margin-inline-start: auto;
+  }
+}
