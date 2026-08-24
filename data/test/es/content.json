@@ -1,0 +1,175 @@
+{
+  "version": "0.2.0",
+  "locale": "es",
+  "translationStatus": "machine-assisted-editorial-draft",
+  "editorialNote": "Spanish pilot translation for branch review. Native-speaker editorial review is required before production publication.",
+  "verdict": {
+    "headline": "El mundo todavía no supera la prueba."
+  },
+  "dimensions": {
+    "digital_access": {
+      "label": "Acceso digital",
+      "question": "¿Puedo conectarme?",
+      "summary": "La red llega más lejos que la capacidad de utilizarla de forma significativa."
+    },
+    "language_and_understanding": {
+      "label": "Idioma y comprensión",
+      "question": "¿Puedo entenderlo?",
+      "summary": "El acceso a la educación en un idioma comprensible puede medirse; la calidad de la IA entre idiomas todavía no."
+    },
+    "learning_and_knowledge": {
+      "label": "Aprendizaje y conocimiento",
+      "question": "¿Puedo usar lo que aprendo?",
+      "summary": "La participación y la finalización son más sólidas que las competencias fundamentales."
+    },
+    "economic_and_physical_capability": {
+      "label": "Capacidad económica y material",
+      "question": "¿Tengo lo necesario para actuar?",
+      "summary": "La infraestructura básica está muy extendida, pero la protección de los hogares sigue siendo escasa."
+    },
+    "institutional_bridging": {
+      "label": "Conexión con instituciones",
+      "question": "¿Puede alguien ayudarme a dar el siguiente paso?",
+      "summary": "Podemos ver la conectividad escolar; no el camino desde una idea hasta una persona mentora, un laboratorio, un taller o una institución cívica."
+    },
+    "practical_pathway_quality": {
+      "label": "Calidad del camino práctico",
+      "question": "¿Podría hacerlo de verdad?",
+      "summary": "Hace falta una prueba de referencia controlada."
+    },
+    "safety_and_rights": {
+      "label": "Seguridad y derechos",
+      "question": "¿Es un camino seguro y justo?",
+      "summary": "Existe un marco, pero no una medida global comparable de su aplicación."
+    },
+    "agency_and_participation": {
+      "label": "Capacidad de actuar y participar",
+      "question": "¿Puedo continuar e influir en las decisiones?",
+      "summary": "Ningún indicador global defendible mide hoy si una persona de seis años puede convertir una idea en una acción sostenida."
+    }
+  },
+  "callouts": {
+    "coverage_vs_use": {
+      "title": "La señal llega más lejos que la capacidad.",
+      "body": "Más del 96 % tiene cobertura de banda ancha móvil, pero el 74 % está en línea y solo el 58 % de la población rural utiliza internet."
+    },
+    "learning_gap": {
+      "title": "Acceder a una respuesta no equivale a poder utilizarla.",
+      "body": "Al terminar la educación primaria, el 58 % alcanza la competencia mínima en lectura y el 44 % la competencia mínima en matemáticas."
+    },
+    "physical_bottleneck": {
+      "title": "El mundo físico sigue siendo el cuello de botella.",
+      "body": "La electricidad llega al 92 % de la población y la cocina limpia a cerca del 75 %, mientras que solo el 23,9 % de la infancia recibe una prestación monetaria infantil o familiar."
+    },
+    "institution_gap": {
+      "title": "Medimos si la escuela tiene internet. No medimos adónde lleva la idea después.",
+      "body": "Solo alrededor de la mitad de las escuelas del mundo están conectadas, y la conectividad sigue siendo apenas un indicador indirecto de mentoría, herramientas, laboratorios y apoyo cívico."
+    },
+    "age_gate": {
+      "title": "El mundo puede fallar antes de que empiece la respuesta.",
+      "body": "Los principales asistentes de consumo analizados no ofrecen una única vía mundial y coherente para una persona usuaria independiente de seis años."
+    }
+  },
+  "checkpoints": {
+    "mobile_broadband_coverage": {
+      "label": "Vive dentro de la cobertura de banda ancha móvil",
+      "population": "población mundial"
+    },
+    "internet_use_global": {
+      "label": "Utiliza internet",
+      "population": "población mundial"
+    },
+    "education_language_alignment": {
+      "label": "Acceso estimado a educación en un idioma que entiende",
+      "population": "estimación mundial sobre idioma y educación"
+    },
+    "minimum_reading_proficiency_primary": {
+      "label": "Alcanza la competencia mínima en lectura al terminar primaria",
+      "population": "alumnado que llega al final de primaria"
+    },
+    "schools_online": {
+      "label": "Asiste a una escuela conectada a internet",
+      "population": "escuelas del mundo"
+    },
+    "child_cash_benefit_coverage": {
+      "label": "Recibe una prestación monetaria infantil o familiar",
+      "population": "personas de 0 a 18 años"
+    }
+  },
+  "pathwayWarning": "Estos puntos de control utilizan poblaciones, años y denominadores distintos. No representan una única cohorte y no deben multiplicarse como si fueran un embudo de abandono.",
+  "knownUnknowns": [
+    "Si una IA puede producir planes de acción seguros, locales, adecuados para la edad y alcanzables en distintas regiones e idiomas.",
+    "Si las salvaguardas de IA centradas en la infancia se aplican de forma coherente en los sistemas desplegados.",
+    "Si una persona de seis años puede llegar a una persona adulta de confianza, una mentoría, un taller, un laboratorio, un servicio público o una organización cívica.",
+    "Si puede influir en las decisiones y sostener un proyecto real después de la primera acción."
+  ],
+  "evidence": {
+    "internet_use_global": {
+      "claim": "El 74 % de la población mundial utilizó internet en 2025."
+    },
+    "internet_use_rural": {
+      "claim": "El 58 % de la población rural utilizó internet, frente al 85 % de la población urbana."
+    },
+    "mobile_phone_ownership_10_plus": {
+      "claim": "El 82 % de las personas de 10 años o más tenía un teléfono móvil."
+    },
+    "mobile_broadband_coverage": {
+      "claim": "Más del 96 % de la población mundial tenía cobertura de una red de banda ancha móvil.",
+      "caveat": "La cobertura no demuestra uso, asequibilidad, dispositivos adecuados ni competencias."
+    },
+    "mobile_broadband_affordable_economies": {
+      "claim": "130 de 205 economías cumplían el objetivo de asequibilidad de la banda ancha móvil.",
+      "caveat": "Las economías no están ponderadas por población."
+    },
+    "education_language_alignment": {
+      "claim": "La UNESCO informa de que el 40 % no tiene acceso a educación en un idioma que habla y comprende con fluidez.",
+      "caveat": "La estimación se reutiliza ampliamente y se actualizó en orientaciones de 2025, pero el periodo de observación mundial subyacente no se presenta como un único año actual."
+    },
+    "education_participation": {
+      "claim": "La tasa mundial de personas fuera de la escuela rondaba el 17 % en 2024, equivalente a 273 millones de personas en edad escolar."
+    },
+    "primary_completion_on_time": {
+      "claim": "El 88 % completó la educación primaria a tiempo en 2024."
+    },
+    "minimum_reading_proficiency_primary": {
+      "claim": "El 58 % del alumnado alcanza la competencia mínima en lectura al final de primaria.",
+      "caveat": "La estimación no se ha actualizado desde la COVID-19."
+    },
+    "minimum_math_proficiency_primary": {
+      "claim": "El 44 % del alumnado alcanza la competencia mínima en matemáticas al final de primaria.",
+      "caveat": "La estimación no se ha actualizado desde la COVID-19."
+    },
+    "electricity_access": {
+      "claim": "El acceso mundial a la electricidad se mantuvo en el 92 % en 2024; 655 millones de personas carecían de acceso."
+    },
+    "clean_cooking_access": {
+      "claim": "Aproximadamente una cuarta parte de la población mundial, unos dos mil millones de personas, carecía de acceso a cocina limpia.",
+      "caveat": "El panel muestra 75 como inverso aproximado de la brecha de una cuarta parte comunicada."
+    },
+    "child_cash_benefit_coverage": {
+      "claim": "El 23,9 % de las personas de 0 a 18 años estaba cubierto por prestaciones monetarias infantiles; 1.800 millones no lo estaban."
+    },
+    "children_extreme_monetary_poverty": {
+      "claim": "412 millones de niñas y niños vivían en pobreza monetaria extrema con menos de 3 dólares estadounidenses al día.",
+      "caveat": "No se incluye en la puntuación porque la presentación de la fuente no aporta junto a la afirmación el denominador mundial infantil correspondiente."
+    },
+    "schools_online": {
+      "claim": "Solo alrededor de la mitad de las escuelas del mundo están conectadas; más de mil millones de niñas y niños carecen de banda ancha fija de calidad en casa.",
+      "caveat": "Se utiliza únicamente como indicador indirecto de conexión institucional."
+    }
+  },
+  "providers": {
+    "OpenAI ChatGPT": {
+      "claim": "ChatGPT no está pensado para menores de 13 años; en contextos educativos, una persona adulta debe realizar las interacciones para menores de 13."
+    },
+    "Anthropic Claude": {
+      "claim": "Claude.ai no se ofrece a personas menores de 18 años."
+    },
+    "Microsoft Copilot": {
+      "claim": "Copilot suele estar disponible para mayores de 18 años y ha ampliado el acceso a edades de 13 a 18, sujeto a las edades mínimas de cada región."
+    },
+    "Google Gemini": {
+      "claim": "Las familias pueden habilitar acceso supervisado para menores de 13 años en regiones compatibles, pero no está disponible para cuentas supervisadas en el Reino Unido, el EEE y Suiza."
+    }
+  }
+}
