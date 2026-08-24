@@ -1,0 +1,23 @@
+standards:
+  repository: DiscoMcDisco/Standards
+  version: 1
+
+project:
+  repository: DiscoMcDisco/six-year-old-manifesto
+  status: active
+  profile: static-site
+
+capabilities:
+  add: [vercel]
+  remove: []
+
+providers:
+  vercel: true
+  github_actions: false
+  database: false
+  external_api: false
+
+exceptions: []
+
+notes:
+  - "Public zero-build static manifesto and evidence dashboard. Automatic Git-triggered Vercel deployment is disabled."
