@@ -8,12 +8,12 @@ project:
   profile: static-site
 
 capabilities:
-  add: [vercel]
+  add: [vercel, github-actions]
   remove: []
 
 providers:
   vercel: true
-  github_actions: false
+  github_actions: true
   database: false
   external_api: false
 
@@ -21,3 +21,4 @@ exceptions: []
 
 notes:
   - "Public zero-build static manifesto and evidence dashboard. Automatic Git-triggered Vercel deployment is disabled."
+  - "Read-only GitHub Actions validate local references, required sections and cross-page anchors."
